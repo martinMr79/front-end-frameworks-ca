@@ -1,5 +1,5 @@
 import "./App.css";
-import { Nav, Home, Product, Products } from "./components/layout/Header/Nav";
+import { Nav, Home, Product, Contact, Checkout, CheckoutSuccess } from "./components/layout/Header/Nav";
 import { Routes, Route} from "react-router-dom";
 
 
@@ -11,8 +11,10 @@ return (
       <Nav />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="products" element={<Products />} />
-        <Route path="product/:id" element={<Product />} />
+        <Route path="Contact" element={<Contact />} />
+        <Route path="product/:id" element={<Product />} />        
+        <Route path="Checkout" element={<Checkout />} />
+        <Route path="CheckoutSuccess" element={<CheckoutSuccess />} />
       </Routes>
     </div>
   );

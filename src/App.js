@@ -1,7 +1,7 @@
-import "./App.css";
-import { Nav, Product, Contact, Checkout, CheckoutSuccess } from "./components/layout/Header/Nav";
+import React from "react";
+import { Nav, Contact, Checkout, CheckoutSuccess } from "./components/layout/Header/Nav";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import { Home } from "./pages/home"
+import { Home, ProductPage } from "./pages/"
 
 
 function App() {  
@@ -12,7 +12,7 @@ return (
       <Routes>
         <Route index element={<Home />} />
         <Route path="Contact" element={<Contact />} />
-        <Route path="product/:id" element={<Product />} />        
+        <Route path="product/:id" element={<ProductPage />} />        
         <Route path="Checkout" element={<Checkout />} />
         <Route path="CheckoutSuccess" element={<CheckoutSuccess />} />
       </Routes>

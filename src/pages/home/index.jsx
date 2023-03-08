@@ -12,7 +12,7 @@ function Products({products, isLoading, isError }) {
 
   return (
     <div>
-      <h2>Products</h2>
+      <h1>Products</h1>
       <div>
         {products.map(product => (
           <div key={product.id}>
@@ -40,7 +40,6 @@ function Products({products, isLoading, isError }) {
   
   return(
     <div>
-      <h1>Home Page</h1>
       <Products products={data} isLoading={isLoading} isError={isError} />
     </div>
   )

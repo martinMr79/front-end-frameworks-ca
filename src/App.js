@@ -6,8 +6,7 @@ import { Home } from "./pages/home"
 
 function App() {  
 
-return (
-    <div>
+return (   
     <BrowserRouter>
       <Nav />
       <Routes>
@@ -18,7 +17,6 @@ return (
         <Route path="CheckoutSuccess" element={<CheckoutSuccess />} />
       </Routes>
     </BrowserRouter>
-    </div>
   );
 }
 export default App;

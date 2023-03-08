@@ -13,20 +13,26 @@ function Products({products, isLoading, isError }) {
   return (
     <div>
       <h2>Products</h2>
-      <ul>
+      <div>
         {products.map(product => (
-          <li key={product.id}>
-            <Link to={`/product/${product.id}`}>{product.name}</Link>
-          </li>
+          <div key={product.id}>
+            <h2>
+              <Link to={`/product/${product.id}`}>{product.title}</Link>
+            </h2>
+            <p>${product.description}</p>
+            <p>${product.price}</p>
+            <p>${product.discountedPrice}</p>
+            <img src={product.imageUrl} alt="" />
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 
   
 }
 
-export function Home(){
+ export function Home(){
   const {data, isLoading, isError} = useAPI(baseURL);
   if(!isLoading){
     console.log(data)
@@ -39,3 +45,5 @@ export function Home(){
     </div>
   )
 }
+
+export default Home

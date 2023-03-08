@@ -22,7 +22,7 @@ function Products({products, isLoading, isError }) {
             <p>${product.description}</p>
             <p>${product.price}</p>
             <p>${product.discountedPrice}</p>
-            <img src={product.imageUrl} alt="" />
+            <img src={product.imageUrl} alt="{product.title}" />
           </div>
         ))}
       </div>

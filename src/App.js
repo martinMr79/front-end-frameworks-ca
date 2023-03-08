@@ -1,13 +1,14 @@
 import "./App.css";
-import { Nav, Home, Product, Contact, Checkout, CheckoutSuccess } from "./components/layout/Header/Nav";
-import { Routes, Route} from "react-router-dom";
-
+import { Nav, Product, Contact, Checkout, CheckoutSuccess } from "./components/layout/Header/Nav";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { Home } from "./pages/home"
 
 
 function App() {  
 
 return (
     <div>
+    <BrowserRouter>
       <Nav />
       <Routes>
         <Route index element={<Home />} />
@@ -16,6 +17,7 @@ return (
         <Route path="Checkout" element={<Checkout />} />
         <Route path="CheckoutSuccess" element={<CheckoutSuccess />} />
       </Routes>
+    </BrowserRouter>
     </div>
   );
 }

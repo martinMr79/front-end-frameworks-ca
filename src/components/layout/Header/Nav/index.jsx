@@ -14,10 +14,6 @@ function Nav() {
   );
 }
 
-function Home() {
-  return <div>Home</div>;
-}
-
 function Contact() {
   return <div>Contact</div>;
 }
@@ -38,7 +34,7 @@ function Product() {
   return <div>Individual product page: {params.id}</div>;
 }
 
-export { Nav, Home, Product, Contact, Checkout, CheckoutSuccess };
+export { Nav, Product, Contact, Checkout, CheckoutSuccess };
 
 
 

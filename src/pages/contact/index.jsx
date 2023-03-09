@@ -15,7 +15,7 @@ const schema = yup
       .string()
       .min(3, "Your subject should be at least 3 characters.")
       .max(99, "Your full name cannot be longer than 99 characters.")
-      .required("Field required"),
+      .required("Please enter a subject"),
    
    
     email: yup
@@ -29,7 +29,7 @@ const schema = yup
       .string()
       .min(3, "Your subject should be at least 3 characters.")
       .max(150, "Your full name cannot be longer than 150 characters.")
-      .required("Field required"),
+      .required("Please leave a message"),
   })
   .required();
 
@@ -48,20 +48,20 @@ function Form() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="">Full Name</label>
+      <label htmlFor="fullName">Full Name</label>
       <input name="fullName" type="text" {...register("fullName")} />
       <p>{errors.fullName?.message}</p>
 
-      <label htmlFor="">Subject</label>
+      <label htmlFor="subject">Subject</label>
       <input name="subject" type="text" {...register("subject")} />
       <p>{errors.subject?.message}</p>
 
-      <label htmlFor="">Email</label>
+      <label htmlFor="email">Email</label>
       <input name="email" type="email" {...register("email")} />
       <p>{errors.email?.message}</p>
 
-      <label htmlFor="">Body</label>
-      <input name="body" type="text" {...register("body")} />
+      <label htmlFor="body">Body</label>
+      <textarea name="body" type="text" {...register("body")} />
       <p>{errors.body?.message}</p>
 
       <button type="submit">Submit</button>

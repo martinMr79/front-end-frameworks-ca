@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom"
 import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
+import SearchBar from "../../components/SearchBar/SearchBar";
+
+
+export function Search() {
+  return (
+    <div>
+      <SearchBar placeholder="Enter a product name" data={useAPI}/>
+    </div>
+  );
+}
+
 
 function Products({products, isLoading, isError }) {
   if (isLoading) {

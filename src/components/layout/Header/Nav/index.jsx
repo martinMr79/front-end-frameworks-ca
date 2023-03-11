@@ -1,16 +1,22 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { NavStyle } from "./styled"
 
 function Nav() {
   return (
+
+    <NavStyle>
     <nav>
       
+      
       <Link to="/">Home</Link>
-      <Link to="/Contact">Contact Page</Link>
-      <Link to="/Checkout">Checkout Page</Link>
-      <Link to="/CheckoutSuccess">Checkout Success Page</Link>
+      <Link to="/Contact">Contact</Link>
+      <Link to="/Checkout">Checkout</Link>
+      <Link to="/CheckoutSuccess">Checkout Success</Link>
 
     </nav>
+
+    </NavStyle>
   );
 }
 

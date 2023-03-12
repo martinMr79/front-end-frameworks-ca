@@ -30,5 +30,18 @@ nav a:hover {
   color: #FFDAB9;
 }
 
+`
+
+export const CartIcon = styled.div `
+
+  div {
+    text-decoration: none;
+    padding-left: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+  }
 
 `

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { NavStyle } from "./styled"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Nav() {
   return (
@@ -11,10 +12,11 @@ function Nav() {
       
       <Link to="/">Home</Link>
       <Link to="/Contact">Contact</Link>
-      <Link to="/Checkout">Checkout</Link>
+      <Link to="/Checkout"><ShoppingCartIcon/></Link>
       <Link to="/CheckoutSuccess">Checkout Success</Link>
-
+  
     </nav>
+    
 
     </NavStyle>
   );

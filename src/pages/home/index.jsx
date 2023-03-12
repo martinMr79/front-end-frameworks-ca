@@ -12,7 +12,6 @@ export function Search() {
   );
 }
 
-
 function Products({products, isLoading, isError }) {
   if (isLoading) {
     return <div>Loading</div>;
@@ -20,8 +19,6 @@ function Products({products, isLoading, isError }) {
   if (isError) {
     return <div>Error</div>;
   }
-
-  
   
   return (
     <div>
@@ -57,7 +54,6 @@ function Products({products, isLoading, isError }) {
     </div>
   );
 }
-
 
 
 

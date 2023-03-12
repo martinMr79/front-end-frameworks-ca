@@ -13,7 +13,7 @@ function Nav() {
       <Link to="/">Home</Link>
       <Link to="/Contact">Contact</Link>
       <Link to="/Checkout"><ShoppingCartIcon/></Link>
-      <Link to="/CheckoutSuccess">Checkout Success</Link>
+      {/*<Link to="/CheckoutSuccess">Checkout Success</Link>*/ }  
   
     </nav>
     

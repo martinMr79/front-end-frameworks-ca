@@ -30,19 +30,25 @@ function Products({products, isLoading, isError }) {
         {products.map((product) => {
           const discount =
             ((product.price - product.discountedPrice) / product.price) * 100;
+
+            const newPrice = product.discountedPrice.toFixed(2);  
           return (
             <div key={product.id}>
               <h2>
                 <Link to={`/product/${product.id}`}>{product.title}</Link>
               </h2>
-              <p>${product.price.toFixed(2)}</p>
+
               {discount > 0 && (
                 <p>
                   Discount: {discount.toFixed(2)}% (Save $
                   {(product.price - product.discountedPrice).toFixed(2)})
                 </p>
               )}
-              <p>${product.discountedPrice.toFixed(2)}</p>
+              <p>${product.price.toFixed(2)}</p>
+                  {product.price !== product.discountedPrice && (
+      <p>New Price ${newPrice}</p>
+    )}
+              
               <img src={product.imageUrl} alt={product.title} />
             </div>
           );
@@ -50,9 +56,10 @@ function Products({products, isLoading, isError }) {
       </div>
     </div>
   );
-
-  
 }
+
+
+
 
  export function Home(){
   const {data, isLoading, isError} = useAPI(baseURL);

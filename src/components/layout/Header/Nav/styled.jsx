@@ -10,8 +10,9 @@ nav {
   min-height: 60px;
   text-decoration: none;
   text-align: start;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  display: flex
 };
 
 nav a {
@@ -20,14 +21,13 @@ nav a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  
   font-size: 1rem;
   color: white;
   
 };
 
 nav a:hover {
-  text-decoration: underline;
+  color: #FFDAB9;
 }
 
 

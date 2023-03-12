@@ -17,7 +17,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  padding-left: 45px;
+  padding-left: 1.5rem;
   justify-content: center;
   align-items: center;
   text-align: center;

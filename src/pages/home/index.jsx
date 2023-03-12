@@ -25,7 +25,7 @@ function Products({products, isLoading, isError }) {
       <h1>Products</h1>
       <div>
         {products.map((product) => {
-          const discount =
+        const discount =
             ((product.price - product.discountedPrice) / product.price) * 100;
 
             const newPrice = product.discountedPrice.toFixed(2);  

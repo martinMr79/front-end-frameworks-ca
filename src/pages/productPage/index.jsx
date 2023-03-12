@@ -21,6 +21,20 @@ export function ProductPage(){
       <p>{data.description}</p>
       <p>Price ${data.price}</p>
       <p>Now Only! ${data.discountedPrice}</p>
+    
+      {data?.reviews && (
+        <div>
+          <h2>Reviews</h2>
+          {data.reviews.map((review) => (
+            <div key={review.id}>
+              <p>Rating: {review.rating}</p>
+              <p>Description: {review.description}</p>
+              <p>Username: {review.username}</p>
+            </div>
+          ))}
+        </div>
+      )}
+   
       <img src={data.imageUrl} alt="{data.title}" />
     </main>
   )

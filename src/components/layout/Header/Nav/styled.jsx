@@ -6,20 +6,23 @@ export const NavStyle = styled.nav`
 nav {
   border: 0;
   background: none;
-  background-color: lightblue;
-  font-color: black;
+  background-color: #311721;
   min-height: 60px;
-  font-size: 25px;
   text-decoration: none;
-  align-text: center; 
-  align-items: center; 
-  
+  text-align: start;
+  justify-content: center;
+  align-items: center;
 };
 
 nav a {
   text-decoration: none;
-  padding-left: 15px;
+  padding-left: 45px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   
+  font-size: 1rem;
+  color: white;
   
 };
 

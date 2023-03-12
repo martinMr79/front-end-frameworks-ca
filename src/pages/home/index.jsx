@@ -21,21 +21,32 @@ function Products({products, isLoading, isError }) {
     return <div>Error</div>;
   }
 
+  
+  
   return (
     <div>
       <h1>Products</h1>
       <div>
-        {products.map(product => (
-          <div key={product.id}>
-            <h2>
-              <Link to={`/product/${product.id}`}>{product.title}</Link>
-            </h2>
-            <p>${product.description}</p>
-            <p>${product.price}</p>
-            <p>${product.discountedPrice}</p>
-            <img src={product.imageUrl} alt="{product.title}" />
-          </div>
-        ))}
+        {products.map((product) => {
+          const discount =
+            ((product.price - product.discountedPrice) / product.price) * 100;
+          return (
+            <div key={product.id}>
+              <h2>
+                <Link to={`/product/${product.id}`}>{product.title}</Link>
+              </h2>
+              <p>${product.price.toFixed(2)}</p>
+              {discount > 0 && (
+                <p>
+                  Discount: {discount.toFixed(2)}% (Save $
+                  {(product.price - product.discountedPrice).toFixed(2)})
+                </p>
+              )}
+              <p>${product.discountedPrice.toFixed(2)}</p>
+              <img src={product.imageUrl} alt={product.title} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

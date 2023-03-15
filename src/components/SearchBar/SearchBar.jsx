@@ -18,7 +18,7 @@ function AutocompleteSearchBar() {
   console.log(searchResults)
 
   useEffect(() => {
-    if (!isLoading && data && data.length) {
+    if (!isLoading && data && data.length && searchTerm.length >= 2) {
       const results = data.filter((item) =>
         item.title.toLowerCase().includes(searchTerm.toLowerCase())
       );

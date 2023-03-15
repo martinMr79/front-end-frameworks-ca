@@ -1,14 +1,14 @@
-import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useAPI } from "../../hooks/api";
 import { baseURL } from "../../utilities/constants";
 import { StyledInput } from "./styled";
 import { StyledResults } from "./styled";
+import { Link } from "react-router-dom"
 
 // import SearchIcon from '@mui/icons-material/Search';
 
 function AutocompleteSearchBar() {
-  let params = useParams();
+
   const { data, isLoading, isError } = useAPI(baseURL);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -35,7 +35,7 @@ function AutocompleteSearchBar() {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>...</div>;
   }
 
   return (
@@ -50,9 +50,13 @@ function AutocompleteSearchBar() {
         <ul>
           {searchResults.map((item) => (
             <StyledResults>
+             <container>
               <div>
-            <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
+              <Link to={`/product/${item.id}`}>
+              <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
+              </Link>           
               </div>
+              </container> 
             </StyledResults>
           ))}
     

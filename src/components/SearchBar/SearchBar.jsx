@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useAPI } from "../../hooks/api";
 import { baseURL } from "../../utilities/constants";
-// import "./SearchBar.css"
+import { StyledInput } from "./styled";
+
 // import SearchIcon from '@mui/icons-material/Search';
 
 function AutocompleteSearchBar() {
@@ -38,15 +39,18 @@ function AutocompleteSearchBar() {
 
   return (
     <div>
-      <input type="text" value={searchTerm} onChange={handleInputChange} />
-      {searchTerm && searchResults.length ?  (
+      <StyledInput>
+    <input type="text" value={searchTerm} onChange={handleInputChange}/>
+      </StyledInput>
+    {searchResults.length ? (
         <ul>
           {searchResults.map((item) => (
             
             <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
-          
+            
           ))}
-        </ul>
+    
+        </ul> 
       ) : (
         
         <div>No results found</div>

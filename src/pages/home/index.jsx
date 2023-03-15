@@ -2,7 +2,8 @@ import { Link } from "react-router-dom"
 import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
-
+import styled from 'styled-components';
+import { StyledInput } from "../../components/SearchBar/styled";
 
 function Products({products, isLoading, isError }) {
   if (isLoading) {
@@ -59,7 +60,11 @@ function Products({products, isLoading, isError }) {
 
       
     <div>
-      <div><AutocompleteSearchBar products={data} /></div>  
+  
+      <div><AutocompleteSearchBar products={data} /></div> 
+      
+       
+      
      <div> <Products products={data} isLoading={isLoading} isError={isError} /></div>
       
     </div>

@@ -42,7 +42,8 @@ function AutocompleteSearchBar() {
       {searchTerm && searchResults.length ?  (
         <ul>
           {searchResults.map((item) => (
-            <li key={item.id}>{item.title}</li>
+            
+            <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
           
           ))}
         </ul>

@@ -1,16 +1,8 @@
 import { Link } from "react-router-dom"
 import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
 
-
-export function Search() {
-  return (
-    <div>
-      <SearchBar placeholder="Enter a product name" data={useAPI}/>
-    </div>
-  );
-}
 
 function Products({products, isLoading, isError }) {
   if (isLoading) {
@@ -64,9 +56,15 @@ function Products({products, isLoading, isError }) {
   }
   
   return(
+
+      
     <div>
-      <Products products={data} isLoading={isLoading} isError={isError} />
+      <div><AutocompleteSearchBar products={data} /></div>  
+     <div> <Products products={data} isLoading={isLoading} isError={isError} /></div>
+      
     </div>
+  
+
   )
 }
 

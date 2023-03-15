@@ -35,7 +35,7 @@ function AutocompleteSearchBar() {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>...</div>;
   }
 
   return (
@@ -50,12 +50,13 @@ function AutocompleteSearchBar() {
         <ul>
           {searchResults.map((item) => (
             <StyledResults>
+             <container>
               <div>
               <Link to={`/product/${item.id}`}>
               <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
-              </Link>
-           
+              </Link>           
               </div>
+              </container> 
             </StyledResults>
           ))}
     

@@ -4,7 +4,7 @@ export const StyledInput = styled.div
 
 `
 div {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 input {
@@ -20,39 +20,62 @@ input {
 
 export const StyledResults = styled.div `
 
+container {
+    display: flex;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    
+}
+
 div {
-    height: 100px;
     background-color: #F2F2F2;
+    height: 100px;
     width: 300px;
     padding: 20px; 
-    text-align: center
+    margin-right: 40px;
+    display: flex; 
+    align-items: center;
+    
+
+}
 
  ul {
-    list-style-type: none
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center
+    text-decoration: none; 
+    list-style-type: none;
+    list-item-style:none; 
+    
+    
+
 }
     
- }   
 
   li {  
-    margin-top: 2px
-    display: flex;
-    align-items: center;
-    text-align: center
 
+    display: flex; 
+    align-items: center;
+    
 }
 
-   
-
-  }
-
 img {
-    height: 60px
+    height: 60px;
+    padding-right: 5px;
     
+    
+}
+
+a {
+    
+    color: red;
+    font-size: 1.25rem
+    text-decoration: none; 
+    list-style-type: none;
+
 }
 
 
 `
+
+
+    
+

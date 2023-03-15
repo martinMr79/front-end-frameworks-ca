@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useAPI } from "../../hooks/api";
 import { baseURL } from "../../utilities/constants";
 import { StyledInput } from "./styled";
+import { StyledResults } from "./styled";
 
 // import SearchIcon from '@mui/icons-material/Search';
 
@@ -48,9 +49,11 @@ function AutocompleteSearchBar() {
     {searchResults.length ? (
         <ul>
           {searchResults.map((item) => (
-            
+            <StyledResults>
+              <div>
             <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
-            
+              </div>
+            </StyledResults>
           ))}
     
         </ul> 

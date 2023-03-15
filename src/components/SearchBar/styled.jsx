@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const StyledInput = styled.div`
+export const StyledInput = styled.div
 
-
+`
 div {
     margin-top: 20px;
 }
@@ -16,19 +16,29 @@ input {
     margin-bottom: 8px;
 }
 
-
 `
 
-export const CartIcon = styled.div `
+export const StyledResults = styled.div `
 
-  div {
+div {
+    height: 100px;
     text-decoration: none;
-    padding-left: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-    color: white;
+}
+
+ ul {
+    text-decoration: none;
+    
+ }   
+
+  li {  
+    text-decoration: none;
+    height: 50px;  ;
+
   }
+
+img {
+    height: 60px
+}
+
 
 `

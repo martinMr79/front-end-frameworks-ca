@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useAPI } from "../../hooks/api";
 import { baseURL } from "../../utilities/constants";
+// import "./SearchBar.css"
+// import SearchIcon from '@mui/icons-material/Search';
 
 function AutocompleteSearchBar() {
   let params = useParams();
@@ -14,7 +16,6 @@ function AutocompleteSearchBar() {
   };
 
   console.log(searchResults)
-  console.log(handleInputChange)
 
   useEffect(() => {
     if (!isLoading && data && data.length) {
@@ -38,7 +39,7 @@ function AutocompleteSearchBar() {
   return (
     <div>
       <input type="text" value={searchTerm} onChange={handleInputChange} />
-      {searchResults.length ? (
+      {searchTerm && searchResults.length ?  (
         <ul>
           {searchResults.map((item) => (
             <li key={item.id}>{item.title}</li>

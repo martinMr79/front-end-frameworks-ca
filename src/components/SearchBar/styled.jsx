@@ -32,26 +32,27 @@ div {
     background-color: #F2F2F2;
     height: 100px;
     width: 300px;
-    padding: 20px; 
+    padding: 15px; 
     margin-right: 40px;
     display: flex; 
     align-items: center;
+    margin-top: -17px;
+    border: 2px solid grey;
     
 
 }
 
  ul {
     text-decoration: none; 
+    display: inline-block;
     list-style-type: none;
     list-item-style:none; 
     
-    
-
 }
     
 
   li {  
-
+    font-size: 1.1em;
     display: flex; 
     align-items: center;
     
@@ -65,11 +66,10 @@ img {
 }
 
 a {
-    
-    color: red;
-    font-size: 1.25rem
+    color: black;
     text-decoration: none; 
     list-style-type: none;
+    
 
 }
 

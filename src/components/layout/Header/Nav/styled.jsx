@@ -12,7 +12,8 @@ nav {
   text-align: start;
   justify-content: start;
   align-items: center;
-  display: flex
+  display: flex;
+  
 };
 
 nav a {

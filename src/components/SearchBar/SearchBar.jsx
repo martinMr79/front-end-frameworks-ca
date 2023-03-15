@@ -40,8 +40,11 @@ function AutocompleteSearchBar() {
   return (
     <div>
       <StyledInput>
-    <input type="text" value={searchTerm} onChange={handleInputChange}/>
+    <div>
+    <input type="text" value={searchTerm} onChange={handleInputChange} placeholder="Search here"/>
+    </div>
       </StyledInput>
+      
     {searchResults.length ? (
         <ul>
           {searchResults.map((item) => (

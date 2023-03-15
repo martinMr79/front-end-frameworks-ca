@@ -13,7 +13,7 @@ input {
     padding: 15px;
     height: 30px; 
     width: 300px;
-    margin-bottom: 8px;
+    
 }
 
 `
@@ -22,22 +22,36 @@ export const StyledResults = styled.div `
 
 div {
     height: 100px;
-    text-decoration: none;
-}
+    background-color: #F2F2F2;
+    width: 300px;
+    padding: 20px; 
+    text-align: center
 
  ul {
-    text-decoration: none;
+    list-style-type: none
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
     
  }   
 
   li {  
-    text-decoration: none;
-    height: 50px;  ;
+    margin-top: 2px
+    display: flex;
+    align-items: center;
+    text-align: center
+
+}
+
+   
 
   }
 
 img {
     height: 60px
+    
 }
 
 

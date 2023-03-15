@@ -17,13 +17,13 @@ export function ProductPage(){
   return(
     <main>
 
-    <img src={data.imageUrl} alt="{data.title}" />
+    <img src={data.imageUrl} alt={data.title} />
 
     <h1>{data.title}</h1>
       <p>{data.description}</p>
-      <p>Price ${data.price}</p>
+      <p>Price kr{data.price}</p>
       {data.price !== data.discountedPrice && (
-        <p>Now Only! ${data.discountedPrice}</p>
+        <p>Now Only! kr{data.discountedPrice}</p>
       )}
 
       {data?.reviews && (

@@ -26,16 +26,16 @@ function Products({products, isLoading, isError }) {
               <h2>
                 <Link to={`/product/${product.id}`}>{product.title}</Link>
               </h2>
-              <p>Price ${product.price.toFixed(2)}</p>
+              <p>Price kr {product.price.toFixed(2)}</p>
               {discount > 0 && (
                 <p>
-                  Discount: {discount.toFixed(2)}% (Save $
+                  Discount: {discount.toFixed(2)}% (Save kr
                   {(product.price - product.discountedPrice).toFixed(2)})
                 </p>
               )}
              
                   {product.price !== product.discountedPrice && (
-      <p>New Price ${newPrice}</p>
+      <p>New Price kr {newPrice}</p>
     )}
               
               <img src={product.imageUrl} alt={product.title} />

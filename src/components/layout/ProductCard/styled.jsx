@@ -18,13 +18,13 @@ div {
   
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-
+  
 
 `;
 
 
 export const ProductCard = styled.div`
-  background-color: #F1FEFE;
+  
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: grid;
@@ -51,7 +51,8 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  height: 150px;;
+  height: 250px;
+  width: 250px;
   object-fit: cover;
   margin: 1.5rem;
 `;

@@ -18,10 +18,19 @@ div {
   
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+
+
+`;
+
+
+export const ProductCard = styled.div`
+  background-color: #F1FEFE;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: grid;
-grid-template-columns: repeat(1, minmax(0, 1fr));
-justify-items: center;
-gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
+  gap: 1rem;
 
 @media (min-width: 640px) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -37,16 +46,8 @@ gap: 1rem;
 
   
 }
-
-
-
-`;
-
-export const ProductCard = styled.div`
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
+
 `;
 
 export const ProductImage = styled.img`
@@ -64,3 +65,4 @@ export const ProductTitle = styled.h2`
 export const ProductDescription = styled.p`
   font-size: 1rem;
 `;
+

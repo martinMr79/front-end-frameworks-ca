@@ -3,7 +3,7 @@ import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
 import { CardContainer } from "../../components/layout/ProductCard/styled"; 
-import { ProductCard, ProductCards, ProductImage } from "../../components/layout/ProductCard/styled";
+import { ProductCard, ProductCards, ProductImage, Button} from "../../components/layout/ProductCard/styled";
 
 
 
@@ -26,7 +26,7 @@ function Products({ products, isLoading, isError }) {
           <div key={product.id}>
             <ProductImage src={product.imageUrl} alt={product.title} />
             <h2>
-              <Link to={`/product/${product.id}`}>{product.title}</Link>
+              {product.title}
             </h2>
             <p>Price kr {product.price.toFixed(2)}</p>
             {discount > 0 && (
@@ -36,6 +36,9 @@ function Products({ products, isLoading, isError }) {
               </p>
             )}
             {product.price !== product.discountedPrice && <p>New Price kr {newPrice}</p>}
+            <Link to={`/product/${product.id}`}> 
+            <Button>View more</Button> 
+            </Link>
           </div>
         );
       })}

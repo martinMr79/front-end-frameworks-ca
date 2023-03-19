@@ -3,7 +3,7 @@ import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
 import { CardContainer } from "../../components/layout/ProductCard/styled"; 
-import { ProductCard, ProductCards, ProductImage, Button} from "../../components/layout/ProductCard/styled";
+import { ProductCard, ProductImage, Button} from "../../components/layout/ProductCard/styled";
 
 
 
@@ -58,9 +58,9 @@ export function Home() {
         <AutocompleteSearchBar products={data} />
       </div>
       <CardContainer>
-        <ProductCards>
+      
           <Products products={data} isLoading={isLoading} isError={isError} />
-        </ProductCards>
+       
       </CardContainer>
     </div>
   );

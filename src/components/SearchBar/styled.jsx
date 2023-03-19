@@ -21,11 +21,9 @@ input {
 export const StyledResults = styled.div `
 
 container {
-    display: flex;
     display: flex; 
     align-items: center;
     justify-content: center; 
-    
 }
 
 div {
@@ -38,8 +36,6 @@ div {
     align-items: center;
     margin-top: -17px;
     border: 2px solid grey;
-    
-
 }
 
  ul {
@@ -47,7 +43,6 @@ div {
     display: inline-block;
     list-style-type: none;
     list-item-style:none; 
-    
 }
     
 
@@ -61,8 +56,6 @@ div {
 img {
     height: 60px;
     padding-right: 5px;
-    
-    
 }
 
 a {

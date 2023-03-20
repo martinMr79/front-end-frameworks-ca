@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom"
 import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import * as S from "./styled"
+import { useCart } from "../../hooks/useCart";
 
 
 function ProductPage(){
   let params = useParams();
   const {data, isLoading, isError} = useAPI((baseURL+ params.id));
+  const { addToCart } = useCart(); 
   if(!isLoading){
    
   }
@@ -14,12 +16,13 @@ function ProductPage(){
     return <div>Error</div>;
   }
   
-  function addtoCartClick() {
-    console.log(data.id); 
+
+  
+  function addToCartClick() {
+    addToCart(data.id); 
 
   }
 
-  
   return (
     <S.ProductWrapper> 
       <S.ProductHeading>{data.title}</S.ProductHeading>
@@ -34,7 +37,7 @@ function ProductPage(){
        <div>Now Only! kr{data.discountedPrice < data.price && data.discountedPrice}</div>
      
       </S.PricesContainer>
-      <S.AddtoCartButon onClick={addtoCartClick}>ADD TO CART</S.AddtoCartButon>
+      <S.AddToCartButon onClick={addToCartClick}>ADD TO CART</S.AddToCartButon>
     </S.ProductWrapper>
   
 

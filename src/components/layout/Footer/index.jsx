@@ -5,7 +5,7 @@ const Footer = () => {
   
     return (
     <FooterStyle>
-    <footer>{`Copyright © Martin Mroz ${year}`}</footer>;
+    <footer>{`Copyright © Martin Mroz ${year}`}</footer>
     </FooterStyle>    
 )
 

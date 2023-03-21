@@ -5,8 +5,10 @@ const useCartStore = create((set) => ({
     products: [],
     isLoading: false, 
     hasErrors: false, 
-    addProductToCart: () => set((state) => ({ products: [...state.products, "Product"]})),
-    clearCart: () => set({ products: [] }),
+    cart: [],
+    addProductToCart: (id) => 
+    set((state) => ({ cart: [...state.cart, id ]})),
+    clearCart: () => set({ cart: [] }),
     fetchProducts: async (url) => {
       set(() => ({loading: true}))  
       try {
@@ -24,19 +26,20 @@ function useCart() {
     const products = useCartStore((state) => state.products); 
     const fetchProducts = useCartStore((state) => state.fetchProducts);
     const isLoading = useCartStore((state) => state.isLoading); 
-    const hasErrors = useCartStore((state) => state.isLoading); 
+    const hasErrors = useCartStore((state) => state.hasErrors); 
+    const cart = useCartStore((state) => state.cart); 
+    const clearCart = useCartStore((state) => state.clearCart); 
+
 
     function addToCart(id) {
         console.log("Add to cart", id); 
-        addProductToCart();
+        addProductToCart(id);
         console.log(products); 
     }
     
-    function clearCart() {
-        console.log("Clear cart")
-    }
+
     
-    return { products, fetchProducts, isLoading, hasErrors, addToCart, clearCart};
+    return { products, cart, fetchProducts, isLoading, hasErrors, addToCart, clearCart};
 }
 
 export { useCart };

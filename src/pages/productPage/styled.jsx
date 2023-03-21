@@ -38,7 +38,7 @@ export const Price = styled.div `
 `;
 
 
-export const AddToCartButon = styled.button`
+export const AddToCartButton = styled.button`
 background-color: black;
 color: white;
 font-size: 20px;

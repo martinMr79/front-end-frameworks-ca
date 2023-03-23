@@ -8,8 +8,12 @@ const useCartStore = create((set) => ({
     isLoading: false, 
     hasErrors: false, 
     cart: [],
-    addProductToCart: (id) => 
-      set((state) => ({ cart: [...state.cart, id ]})),
+    addProductToCart: (id) =>
+    set((state) => {
+      const selectedProduct = state.products.find((product) => product.id === id);
+      console.log('Selected Product:', selectedProduct);
+      return { cart: [...state.cart, id] };
+    }),
     clearCart: () => set({ cart: [] }),
     fetchProducts: async (url) => {
       console.log('Fetching products...'); // add console log here

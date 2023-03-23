@@ -6,9 +6,8 @@ import { useCart } from "../../hooks/useCart";
 
 function ProductPage(){
   let params = useParams();
-  const {data, fetchProducts, isLoading, hasError} = useAPI((baseURL+ params.id));
-  const { addToCart } = useCart(); 
-  const { cart, clearCart } = useCart(); 
+  const {data, isLoading, hasError} = useAPI((baseURL+ params.id)); 
+  const { cart, clearCart, addToCart } = useCart(); 
 
   if(isLoading){
     return <div>Loading...</div>

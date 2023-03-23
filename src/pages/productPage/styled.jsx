@@ -29,6 +29,7 @@ export const RatingStarsContainer = styled.div``;
 export const PricesContainer = styled.div`
 display: flex; 
 justify-content: space-between; 
+padding: 5px 
 `; 
 
 export const Price = styled.div `

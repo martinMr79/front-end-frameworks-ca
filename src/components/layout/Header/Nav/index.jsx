@@ -2,22 +2,19 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { NavStyle } from "./styled"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useCart } from "../../../../hooks/useCart";
 
 function Nav() {
-  return (
-
-    <NavStyle>
-    <nav>
-      
-      
-      <Link to="/">Home</Link>
-      <Link to="/Contact">Contact</Link>
-      <Link to="/Checkout"><ShoppingCartIcon/></Link>
-      {/*<Link to="/CheckoutSuccess">Checkout Success</Link>*/ }  
+  const { cart } = useCart();
   
-    </nav>
+  return (
+    <NavStyle>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/Contact">Contact</Link>
     
-
+        <Link to="/Cart"><ShoppingCartIcon/>{cart.length > 0 && <span>{cart.length}</span>}</Link>
+      </nav>
     </NavStyle>
   );
 }

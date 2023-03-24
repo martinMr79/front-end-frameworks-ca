@@ -24,7 +24,8 @@ function CartPage() {
             {cart.map((productId) => {
               const product = products.find((p) => p.id === productId);
               return product ? (
-                <li key={productId}>{product.title} - kr {product.price}</li>
+                <li key={productId}>{product.title} - {product.discountedPrice && <span>kr {product.discountedPrice}</span>}
+                {!product.discountedPrice && <span>kr {product.price}</span>}</li>
               ) : null;
             })}
           </ul>

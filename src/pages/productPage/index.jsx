@@ -7,7 +7,7 @@ import { useCart } from "../../hooks/useCart";
 function ProductPage(){
   let params = useParams();
   const {data, isLoading, hasError} = useAPI((baseURL+ params.id)); 
-  const { cart, clearCart, addToCart } = useCart(); 
+  const { addToCart } = useCart(); 
 
   if(isLoading){
     return <div>Loading...</div>
@@ -24,15 +24,7 @@ function ProductPage(){
   
   return (
     <div>
-      <div>
-        <button onClick={clearCart}>CLEAR</button>
-        Cart:{" "}
-        <div>
-          {cart?.map((item) => (
-            <div>{data.id}</div>
-          ))}
-        </div>
-      </div>
+
 
       <S.ProductWrapper> 
         <S.ProductHeading>{data.title}</S.ProductHeading>

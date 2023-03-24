@@ -1,9 +1,9 @@
 import React from 'react';
-import { useCart } from '../../hooks/useCart';
+import { useCart,  } from '../../hooks/useCart';
 import { CartCount, CartItems } from './styled';
 
 function CartPage() {
-  const { cart, products } = useCart();
+  const { cart, products, clearCart } = useCart();
 
   // Calculate total price
   const totalPrice = cart.reduce((acc, productId) => {
@@ -24,7 +24,7 @@ function CartPage() {
             {cart.map((productId) => {
               const product = products.find((p) => p.id === productId);
               return product ? (
-                <li key={productId}>{product.title} - ${product.price}</li>
+                <li key={productId}>{product.title} - kr {product.price}</li>
               ) : null;
             })}
           </ul>
@@ -32,6 +32,7 @@ function CartPage() {
           <CartCount>
           <p>Total price: kr {totalPrice}</p>
           </CartCount>
+          <button onClick={clearCart}>CLEAR CART</button>
         </>
       )}
     </div>

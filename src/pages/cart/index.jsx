@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../../hooks/useCart';
+import { CartCount, CartItems } from './styled';
 
 function CartPage() {
   const { cart, products } = useCart();
@@ -13,19 +14,24 @@ function CartPage() {
   return (
     <div>
       <h1>Cart</h1>
+
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
         <>
+        <CartItems>
           <ul>
             {cart.map((productId) => {
               const product = products.find((p) => p.id === productId);
               return product ? (
-                <li key={productId}>{product.name} - ${product.price}</li>
+                <li key={productId}>{product.title} - ${product.price}</li>
               ) : null;
             })}
           </ul>
-          <p>Total price: ${totalPrice}</p>
+          </CartItems>
+          <CartCount>
+          <p>Total price: kr {totalPrice}</p>
+          </CartCount>
         </>
       )}
     </div>

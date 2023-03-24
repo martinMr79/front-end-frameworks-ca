@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart,  } from '../../hooks/useCart';
-import { CartCount, CartItems } from './styled';
+import { CartCount, CartItems, ClearCartButton } from './styled';
 
 function CartPage() {
   const { cart, products, clearCart } = useCart();
@@ -33,7 +33,9 @@ function CartPage() {
           <CartCount>
           <p>Total price: kr {totalPrice}</p>
           </CartCount>
-          <button onClick={clearCart}>CLEAR CART</button>
+          <ClearCartButton onClick={clearCart}>
+            CLEAR CART
+          </ClearCartButton>
         </>
       )}
     </div>

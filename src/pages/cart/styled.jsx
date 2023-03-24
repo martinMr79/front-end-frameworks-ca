@@ -29,7 +29,7 @@ border-radius: 5px;
 margin: 10px 0px;
 cursor: pointer;
  :hover {
-    background-color: white;
-    color: black;
+    background-color: red;
+    color: white;
  }
 `

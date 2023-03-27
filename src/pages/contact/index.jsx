@@ -1,7 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CheckIcon from '@mui/icons-material/Check';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { 
+  Container, 
+  FormError, 
+  Label, 
+  Input, 
+  TextArea, 
+  StyledForm, 
+  ContactFormButton,  
+  MessageContainer, ThankYouMessage, StyledCheckIcon, } from "./styled"
 
 const schema = yup
   .object({
@@ -43,30 +54,40 @@ function Form() {
   });
 
   function onSubmit(data) {
+    window.alert(`Thank you ${data.fullName} for contacting us! We will get back to you soon.`);
     console.log(data);
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="fullName">Full Name</label>
-      <input name="fullName" type="text" {...register("fullName")} />
-      <p>{errors.fullName?.message}</p>
+    
+    <Container>
+    
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <h1>Contact us</h1>
+      <Label htmlFor="fullName">Full Name</Label>
+      <Input name="fullName" type="text" {...register("fullName")} />
+      <FormError>{errors.fullName?.message}</FormError>
 
-      <label htmlFor="subject">Subject</label>
-      <input name="subject" type="text" {...register("subject")} />
-      <p>{errors.subject?.message}</p>
+      <Label htmlFor="subject">Subject</Label>
+      <Input name="subject" type="text" {...register("subject")} />
+      <FormError>{errors.subject?.message}</FormError>
 
-      <label htmlFor="email">Email</label>
-      <input name="email" type="email" {...register("email")} />
-      <p>{errors.email?.message}</p>
+      <Label htmlFor="email">Email</Label>
+      <Input name="email" type="email" {...register("email")} />
+      <FormError>{errors.email?.message}</FormError>
 
-      <label htmlFor="body">Body</label>
-      <textarea name="body" type="text" {...register("body")} />
-      <p>{errors.body?.message}</p>
+      <Label htmlFor="body">Body</Label>
+      <TextArea name="body" type="text" {...register("body")} />
+    {/*   <CheckIcon></CheckIcon> */} 
+      <FormError>{errors.body?.message}</FormError>
 
-      <button type="submit">Submit</button>
-    </form>
+      <ContactFormButton type="submit">Submit</ContactFormButton>
+    </StyledForm>
+   {/*<CheckCircleOutlineIcon></CheckCircleOutlineIcon> */} 
+    </Container>
   );
+  
 }
+
 
 export default Form;

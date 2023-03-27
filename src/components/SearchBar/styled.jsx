@@ -8,10 +8,11 @@ div {
 }
 
 input {
-    font-size: 22px;
-    border-radius: 2px;
-    padding: 15px;
-    height: 30px; 
+    width: 95%; 
+    margin-top: 2px; 
+    padding: 10px; 
+    font-size: 19px; 
+    border-radius: 1rem;
     width: 300px;
     
 }

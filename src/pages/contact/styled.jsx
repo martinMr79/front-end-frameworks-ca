@@ -1,6 +1,4 @@
-import styled, { css } from 'styled-components';
-import CheckIcon from '@mui/icons-material/Check';
-
+import styled from 'styled-components';
 
 const Container = styled.div` 
 max-width: 1200px; 
@@ -12,15 +10,10 @@ justify-content: center;
 `
 
 const FormError = styled.p` 
-
 color: red; 
 font-size: 1.1rem; 
 margin-top: 3px;
 `
-
-const FormGroup = styled.div`
-  position: relative;
-`;
 
 const Label = styled.label` 
 display: block; 
@@ -28,67 +21,23 @@ margin-top: 1rem;
 font-size: 19px;
 `
 
-const InputContainer = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-`;
+const Input = styled.input`
+width: 95%; 
+margin-top: 2px; 
+padding: 10px; 
+font-size: 19px; 
+border-radius: 1rem;
+`
 
-const InputField = styled.input`
-  border: ${(props) =>
-    props.noError ? "2px solid green" : "2px solid red"};
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  outline: none;
-  width: 100%;
-
-  &:focus {
-    border-color: ${(props) => (props.noError ? "green" : "red")};
-  }
-`;
-
-const CheckIconContainer = styled.div`
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-`;
-
-const Input = ({ noError, ...rest }) => {
-  return (
-    <InputContainer>
-      <InputField noError={noError} {...rest} />
-      {noError ? (
-        <CheckIconContainer>
-          <CheckIcon style={{ color: 'green' }} />
-        </CheckIconContainer>
-      ) : null}
-    </InputContainer>
-  );
-};
-
-export default Input;
-
-const TextArea = styled.textarea`
-  /* ... */
-  ${props =>
-    props.noError &&
-    css`
-      display: inline-block;
-      padding-right: 35px;
-      &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        color: #54d6b8;
-        font-size: 24px;
-        transform: translateY(-50%);
-      }
-    `}
-`;
+const TextArea = styled.textarea` 
+width: 95%; 
+height: 80px; 
+margin-top: 2px; 
+padding: 10px; 
+font-size: 19px; 
+border-radius: 1rem; 
+resize: none;
+`
 
 const StyledForm = styled.form` 
 padding: 2em; background: white; border-radius: 1rem;
@@ -121,16 +70,14 @@ display: flex;
 text-align: center;
 `
 
-export {
-    Container,
-    FormError,
-    Label,
-    Input,
-    TextArea,
-    StyledForm,
-    ContactFormButton,
-    MessageContainer,
-    ThankYouMessage,
+const CheckIcon = styled.div` 
+color: #54d6b8; 
+border: solid 4px; 
+border-radius: 50%; 
+padding: 7px; 
+margin-bottom: 30px;
+`
 
-    FormGroup
-  };
+
+
+export { Container, FormError, Label, Input, TextArea, StyledForm, ContactFormButton, MessageContainer, ThankYouMessage, CheckIcon };

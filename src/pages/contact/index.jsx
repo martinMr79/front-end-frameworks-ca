@@ -54,6 +54,7 @@ function Form() {
   });
 
   function onSubmit(data) {
+    window.alert("Thank you for contacting us! We will get back to you soon.")
     console.log(data);
   }
 

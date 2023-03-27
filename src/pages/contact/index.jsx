@@ -54,7 +54,7 @@ function Form() {
   });
 
   function onSubmit(data) {
-    window.alert("Thank you for contacting us! We will get back to you soon.")
+    window.alert(`Thank you ${data.fullName} for contacting us! We will get back to you soon.`);
     console.log(data);
   }
 
@@ -78,12 +78,12 @@ function Form() {
 
       <Label htmlFor="body">Body</Label>
       <TextArea name="body" type="text" {...register("body")} />
-      <CheckIcon></CheckIcon>
+    {/*   <CheckIcon></CheckIcon> */} 
       <FormError>{errors.body?.message}</FormError>
 
       <ContactFormButton type="submit">Submit</ContactFormButton>
     </StyledForm>
-    <CheckCircleOutlineIcon></CheckCircleOutlineIcon>
+   {/*<CheckCircleOutlineIcon></CheckCircleOutlineIcon> */} 
     </Container>
   );
   

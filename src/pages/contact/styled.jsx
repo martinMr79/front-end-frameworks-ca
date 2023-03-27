@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import CheckIcon from '@mui/icons-material/Check';
 
 
 const Container = styled.div` 
@@ -27,25 +28,47 @@ margin-top: 1rem;
 font-size: 19px;
 `
 
-const Input = styled.input`
-  /* ... */
-  ${props =>
-    props.noError &&
-    css`
-      display: inline-block;
-      padding-right: 35px;
-      &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        color: #54d6b8;
-        font-size: 24px;
-        transform: translateY(-50%);
-      }
-    `}
+const InputContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
 `;
+
+const InputField = styled.input`
+  border: ${(props) =>
+    props.noError ? "2px solid green" : "2px solid red"};
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+
+  &:focus {
+    border-color: ${(props) => (props.noError ? "green" : "red")};
+  }
+`;
+
+const CheckIconContainer = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+const Input = ({ noError, ...rest }) => {
+  return (
+    <InputContainer>
+      <InputField noError={noError} {...rest} />
+      {noError ? (
+        <CheckIconContainer>
+          <CheckIcon style={{ color: 'green' }} />
+        </CheckIconContainer>
+      ) : null}
+    </InputContainer>
+  );
+};
+
+export default Input;
 
 const TextArea = styled.textarea`
   /* ... */

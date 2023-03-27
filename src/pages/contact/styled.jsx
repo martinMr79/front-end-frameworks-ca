@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
 
 const Container = styled.div` 
 max-width: 1200px; 
@@ -16,6 +17,10 @@ font-size: 1.1rem;
 margin-top: 3px;
 `
 
+const FormGroup = styled.div`
+  position: relative;
+`;
+
 const Label = styled.label` 
 display: block; 
 margin-top: 1rem; 
@@ -23,22 +28,44 @@ font-size: 19px;
 `
 
 const Input = styled.input`
-width: 95%; 
-margin-top: 2px; 
-padding: 10px; 
-font-size: 19px; 
-border-radius: 1rem;
-`
+  /* ... */
+  ${props =>
+    props.noError &&
+    css`
+      display: inline-block;
+      padding-right: 35px;
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #54d6b8;
+        font-size: 24px;
+        transform: translateY(-50%);
+      }
+    `}
+`;
 
-const TextArea = styled.textarea` 
-width: 95%; 
-height: 80px; 
-margin-top: 2px; 
-padding: 10px; 
-font-size: 19px; 
-border-radius: 1rem; 
-resize: none;
-`
+const TextArea = styled.textarea`
+  /* ... */
+  ${props =>
+    props.noError &&
+    css`
+      display: inline-block;
+      padding-right: 35px;
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #54d6b8;
+        font-size: 24px;
+        transform: translateY(-50%);
+      }
+    `}
+`;
 
 const StyledForm = styled.form` 
 padding: 2em; background: white; border-radius: 1rem;
@@ -71,14 +98,16 @@ display: flex;
 text-align: center;
 `
 
-const CheckIcon = styled.div` 
-color: #54d6b8; 
-border: solid 4px; 
-border-radius: 50%; 
-padding: 7px; 
-margin-bottom: 30px;
-`
+export {
+    Container,
+    FormError,
+    Label,
+    Input,
+    TextArea,
+    StyledForm,
+    ContactFormButton,
+    MessageContainer,
+    ThankYouMessage,
 
-
-
-export { Container, FormError, Label, Input, TextArea, StyledForm, ContactFormButton, MessageContainer, ThankYouMessage, CheckIcon };
+    FormGroup
+  };

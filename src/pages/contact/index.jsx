@@ -1,18 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import CheckIcon from '@mui/icons-material/Check';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { 
-  Container, 
-  FormError, 
-  Label, 
-  Input, 
-  TextArea, 
-  StyledForm, 
-  ContactFormButton,  
-  MessageContainer, ThankYouMessage, StyledCheckIcon, } from "./styled"
+import CheckIcon from '@mui/icons-material/Check';
+import {
+  Container,
+  FormError,
+  Label,
+  Input,
+  TextArea,
+  StyledForm,
+  ContactFormButton,
+  MessageContainer,
+  ThankYouMessage,
+  
+  FormGroup,
+} from "./styled";
 
 const schema = yup
   .object({
@@ -21,20 +24,14 @@ const schema = yup
       .min(3, "Your full name should be at least 3 characters.")
       .max(49, "Your full name cannot be longer than 49 characters.")
       .required("Please enter your first name"),
-  
+
     subject: yup
       .string()
       .min(3, "Your subject should be at least 3 characters.")
       .max(99, "Your full name cannot be longer than 99 characters.")
       .required("Please enter a subject"),
-   
-   
-    email: yup
-      .string()
-      .email()
-      .required("Please enter a valid email"),
 
-
+    email: yup.string().email().required("Please enter a valid email"),
 
     body: yup
       .string()
@@ -58,35 +55,61 @@ function Form() {
   }
 
   return (
-    
     <Container>
-    
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <h1>Contact us</h1>
-      <Label htmlFor="fullName">Full Name</Label>
-      <Input name="fullName" type="text" {...register("fullName")} />
-      <FormError>{errors.fullName?.message}</FormError>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <h1>Contact us</h1>
+        <FormGroup>
+          <Label htmlFor="fullName">Full Name</Label>
+          <Input
+            name="fullName"
+            type="text"
+            {...register("fullName")}
+            noError={!errors.fullName}
+          />
+          {errors.fullName ? null : <CheckIcon style={{ color: 'green' }} />}
+          <FormError>{errors.fullName?.message}</FormError>
+        </FormGroup>
 
-      <Label htmlFor="subject">Subject</Label>
-      <Input name="subject" type="text" {...register("subject")} />
-      <FormError>{errors.subject?.message}</FormError>
+        <FormGroup>
+          <Label htmlFor="subject">Subject</Label>
+          <Input
+            name="subject"
+            type="text"
+            {...register("subject")}
+            noError={!errors.subject}
+          />
+          {errors.subject ? null : <CheckIcon style={{ color: 'green' }}/>}
+          <FormError>{errors.subject?.message}</FormError>
+        </FormGroup>
 
-      <Label htmlFor="email">Email</Label>
-      <Input name="email" type="email" {...register("email")} />
-      <FormError>{errors.email?.message}</FormError>
+        <FormGroup>
+          <Label htmlFor="email">Email</Label>
+          <Input
+            name="email"
+            type="email"
+            {...register("email")}
+            noError={!errors.email}
+          />
+          {errors.email ? null : <CheckIcon style={{ color: 'green' }}/>}
+          <FormError>{errors.email?.message}</FormError>
+        </FormGroup>
 
-      <Label htmlFor="body">Body</Label>
-      <TextArea name="body" type="text" {...register("body")} />
-      <CheckIcon></CheckIcon>
-      <FormError>{errors.body?.message}</FormError>
+        <FormGroup>
+          <Label htmlFor="body">Body</Label>
+          <TextArea
+            name="body"
+            type="text"
+            {...register("body")}
+            noError={!errors.body}
+          />
+          {errors.body ? null : <CheckIcon style={{ color: 'green' }}/>}
+          <FormError>{errors.body?.message}</FormError>
+        </FormGroup>
 
-      <ContactFormButton type="submit">Submit</ContactFormButton>
-    </StyledForm>
-    <CheckCircleOutlineIcon></CheckCircleOutlineIcon>
+        <ContactFormButton type="submit">Submit</ContactFormButton>
+      </StyledForm>
     </Container>
   );
-  
 }
-
 
 export default Form;

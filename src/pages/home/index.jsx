@@ -16,7 +16,6 @@ function Products({ products, isLoading, isError }) {
   }
 
   return (
-
     <ProductCard>
       {products.map((product) => {
         const discount = ((product.price - product.discountedPrice) / product.price) * 100;
@@ -24,28 +23,30 @@ function Products({ products, isLoading, isError }) {
 
         return (
           <div key={product.id}>
-            <ProductImage src={product.imageUrl} alt={product.title} />
-            <h2>
-              {product.title}
-            </h2>
+            <div style={{ position: 'relative' }}>
+              <ProductImage src={product.imageUrl} alt={product.title} />
+              <div style={{ position: 'absolute', top: '0', left: '0', padding: '10px', backgroundColor: 'white' }}>
+                {product.price !== product.discountedPrice && <p>New Price kr {newPrice}</p>}
+                {discount > 0 && (
+                  <p>
+                    Discount: {discount.toFixed(2)}% (Save kr
+                    {(product.price - product.discountedPrice).toFixed(2)})
+                  </p>
+                )}
+              </div>
+            </div>
+            <h2>{product.title}</h2>
             <p>Price kr {product.price.toFixed(2)}</p>
-            {discount > 0 && (
-              <p>
-                Discount: {discount.toFixed(2)}% (Save kr
-                {(product.price - product.discountedPrice).toFixed(2)})
-              </p>
-            )}
-            {product.price !== product.discountedPrice && <p>New Price kr {newPrice}</p>}
             <Link to={`/product/${product.id}`}> 
-            <Button>View more</Button> 
+              <Button>View more</Button> 
             </Link>
           </div>
         );
       })}
     </ProductCard>
-    
   );
 }
+
 
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import CheckIcon from '@mui/icons-material/Check';
+/*  import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CheckIcon from '@mui/icons-material/Check';*/
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { 
@@ -12,7 +12,7 @@ import {
   TextArea, 
   StyledForm, 
   ContactFormButton,  
-  MessageContainer, ThankYouMessage, StyledCheckIcon, } from "./styled"
+   } from "./styled"
 
 const schema = yup
   .object({

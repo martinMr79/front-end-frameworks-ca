@@ -63,12 +63,6 @@ align-items: center;
 `
 
 
-const ThankYouMessage = styled.div` 
-font-size: 26px; 
-margin-bottom: 100px; 
-display: flex; 
-text-align: center;
-`
 
 const CheckIcon = styled.div` 
 color: #54d6b8; 
@@ -80,4 +74,4 @@ margin-bottom: 30px;
 
 
 
-export { Container, FormError, Label, Input, TextArea, StyledForm, ContactFormButton, MessageContainer, ThankYouMessage, CheckIcon };
+export { Container, FormError, Label, Input, TextArea, StyledForm, ContactFormButton, MessageContainer, CheckIcon };

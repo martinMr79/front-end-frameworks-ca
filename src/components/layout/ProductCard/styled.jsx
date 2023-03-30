@@ -10,6 +10,12 @@ margin: 0 auto 2rem;
 `;
 
 
+export const ProductPrice = styled.div `
+    color: ${(props) => (props.isValid ? "initial" : "red")};  
+    text-decoration: ${(props) => (props.isValid ? "none" : "line-through")};  
+
+`; 
+
 export const ProductCards = styled.div`
 
 div {

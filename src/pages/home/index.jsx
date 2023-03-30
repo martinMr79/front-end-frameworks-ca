@@ -3,7 +3,7 @@ import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
 import { CardContainer } from "../../components/layout/ProductCard/styled"; 
-import { ProductCard, ProductImage, Button} from "../../components/layout/ProductCard/styled";
+import { ProductCard, ProductImage, Button, ProductPrice} from "../../components/layout/ProductCard/styled";
 
 
 
@@ -25,18 +25,19 @@ function Products({ products, isLoading, isError }) {
           <div key={product.id}>
             <div style={{ position: 'relative' }}>
               <ProductImage src={product.imageUrl} alt={product.title} />
-              <div style={{ position: 'absolute', top: '0', left: '0', padding: '10px', backgroundColor: 'white' }}>
-                {product.price !== product.discountedPrice && <p>New Price kr {newPrice}</p>}
+              <div style={{ position: 'absolute', top: '20px', left: '22px', padding: '10px', backgroundColor: '#ff0099' }}>
+                
                 {discount > 0 && (
                   <p>
-                    Discount: {discount.toFixed(2)}% (Save kr
-                    {(product.price - product.discountedPrice).toFixed(2)})
+                    -{discount.toFixed(2)}% Save kr
+                    {(product.price - product.discountedPrice).toFixed(2)}
                   </p>
                 )}
               </div>
             </div>
             <h2>{product.title}</h2>
             <p>Price kr {product.price.toFixed(2)}</p>
+            {product.price !== product.discountedPrice && <p>New Price kr {newPrice}</p>}
             <Link to={`/product/${product.id}`}> 
               <Button>View more</Button> 
             </Link>

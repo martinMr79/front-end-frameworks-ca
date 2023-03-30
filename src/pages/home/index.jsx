@@ -11,6 +11,7 @@ import {
   ProductPrice,
   
 } from "../../components/layout/ProductCard/styled";
+import { fontSize } from "@mui/system";
 
 function Products({ products, isLoading, isError }) {
   if (isLoading) {
@@ -40,14 +41,18 @@ function Products({ products, isLoading, isError }) {
                     top: "28px",
                     left: "28px",
                     padding: "5px",          
-                    backgroundColor: "#ff0099",
+                    backgroundColor: "#F01211",
                     borderRadius: "10px",
+                 
                   }}
                 >
 
                   <p
                    style={{
-                   margin: "0"
+                   margin: "0",
+                   color: "white",
+                   fontSize: "1.1rem",
+                    
                    }}
                   >
                     -{discount.toFixed(2)}% 
@@ -62,10 +67,15 @@ function Products({ products, isLoading, isError }) {
                     bottom: "32px",
                     left: "28px",
                     padding: "5px",
-                    backgroundColor: "yellow",
+                    backgroundColor: "#E8CE58",
                     borderRadius: "10px",
                   }}
                 >
+
+                  
+
+
+
                   Save kr {(product.price - product.discountedPrice).toFixed(2)}
                 </div>
               )}

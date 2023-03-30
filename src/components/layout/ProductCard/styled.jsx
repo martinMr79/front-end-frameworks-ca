@@ -11,7 +11,7 @@ margin: 0 auto 2rem;
 
 
 export const ProductPrice = styled.div `
-    color: ${(props) => (props.isValid ? "initial" : "red")};
+    color: ${(props) => (props.isValid ? "initial" : "#F01211")};
     text-decoration: ${(props) => (props.isDiscounted ? "line-through" : "none")};
     
     span {

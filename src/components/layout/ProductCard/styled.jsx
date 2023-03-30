@@ -10,6 +10,24 @@ margin: 0 auto 2rem;
 `;
 
 
+export const ProductPrice = styled.div `
+    color: ${(props) => (props.isValid ? "initial" : "red")};
+    text-decoration: ${(props) => (props.isDiscounted ? "line-through" : "none")};
+    
+    span {
+      color: ${(props) => (props.isDiscounted ? "red" : "black")};
+    }
+`;
+
+
+export const DiscountInfo = styled.p`
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #ff0099;
+`;
+
+
 export const ProductCards = styled.div`
 
 div {
@@ -45,8 +63,7 @@ export const ProductCard = styled.div`
 }
 
   
-}
-  
+} 
 
 `;
 

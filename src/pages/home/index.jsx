@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
+import backgroundImage from "../../assets/images/background-image.jpg";
 import {
   CardContainer,
   ProductCard,
@@ -98,7 +99,11 @@ export function Home() {
 
   return (
     <div>
-      <div>
+      <div style={{ backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      height: "700px",
+      backgroundPosition: "center" 
+       }}>
         <AutocompleteSearchBar products={data} />
       </div>
       <CardContainer>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { baseURL } from "../../utilities/constants";
 import { useAPI } from "../../hooks/api";
 import AutocompleteSearchBar from "../../components/SearchBar/SearchBar";
-import backgroundImage from "../../assets/images/background-image.jpg";
+import backgroundImage from "../../assets/images/background-image2.jpg";
 import {
   CardContainer,
   ProductCard,
@@ -21,6 +21,7 @@ function Products({ products, isLoading, isError }) {
   }
 
   return (
+    
     <ProductCard>
       {products.map((product) => {
         const discount =
@@ -101,11 +102,12 @@ export function Home() {
     <div>
       <div style={{ backgroundImage: `url(${backgroundImage})`,
       backgroundSize: "cover",
-      height: "700px",
+      height: "450px",
       backgroundPosition: "center" 
        }}>
         <AutocompleteSearchBar products={data} />
       </div>
+      <h1>Products</h1>
       <CardContainer>
         <Products products={data} isLoading={isLoading} isError={isError} />
       </CardContainer>

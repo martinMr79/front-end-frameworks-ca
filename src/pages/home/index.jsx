@@ -37,16 +37,22 @@ function Products({ products, isLoading, isError }) {
                     position: "absolute",
                     top: "28px",
                     left: "28px",
-                    padding: "5px",
+                    padding: "5px",          
                     backgroundColor: "#ff0099",
                     borderRadius: "10px",
                   }}
                 >
-                  <p>
+
+                  <p
+                   style={{
+                   margin: "0"
+                   }}
+                  >
                     -{discount.toFixed(2)}% 
                   </p>
                 </div>
               )}
+
               {discount > 0 && (
                 <div
                   style={{

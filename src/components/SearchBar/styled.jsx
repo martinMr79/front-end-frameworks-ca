@@ -3,13 +3,11 @@ import styled from 'styled-components';
 export const StyledInput = styled.div
 
 `
-div {
-    margin-top: 25px;
-}
+
 
 input {
     width: 95%; 
-    margin-top: 2px; 
+    margin-top: 55px; 
     padding: 10px; 
     font-size: 19px; 
     border-radius: 1rem;

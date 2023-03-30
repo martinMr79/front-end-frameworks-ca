@@ -67,7 +67,6 @@ function AutocompleteSearchBar() {
         <div>No results found</div>
         
       )}
-       <h1>Products</h1>
     </div>
      
   );

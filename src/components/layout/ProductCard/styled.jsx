@@ -1,3 +1,4 @@
+import { color } from '@mui/system';
 import styled from 'styled-components';
 
 export const CardContainer = styled.div` 
@@ -11,10 +12,14 @@ margin: 0 auto 2rem;
 
 
 export const ProductPrice = styled.div `
-    color: ${(props) => (props.isValid ? "initial" : "red")};  
-    text-decoration: ${(props) => (props.isValid ? "none" : "line-through")};  
+    color: ${(props) => (props.isValid ? "initial" : "red")};
+    text-decoration: ${(props) => (props.isDiscounted ? "line-through" : "none")};
+    
+    span {
+      color: ${(props) => (props.isDiscounted ? "red" : "black")};
+    }
+`;
 
-`; 
 
 export const ProductCards = styled.div`
 

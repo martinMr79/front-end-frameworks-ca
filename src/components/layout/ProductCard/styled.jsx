@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.div` 
-max-width: 1400px;
-margin-bottom: 2rem;
+max-width: 1500px;
 display: flex;
 flex-direction: column;
 justify-content: center;
-margin: 0 auto 2rem;
+margin: 0 auto 6rem;
+
 `;
 
 
@@ -21,25 +21,19 @@ export const ProductPrice = styled.div `
 
 
 export const DiscountInfo = styled.p`
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #ff0099;
+  margin: 0;
+  font-size: 1.3rem;
 `;
 
 
 export const ProductCards = styled.div`
 
 div {
-
   padding: 16px;
-  
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  
-
+}
 `;
-
 
 export const ProductCard = styled.div`
   
@@ -48,7 +42,7 @@ export const ProductCard = styled.div`
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   justify-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
 @media (min-width: 640px) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -68,8 +62,8 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
   margin: 1.5rem;
 `;

@@ -9,9 +9,10 @@ import {
   ProductImage,
   Button,
   ProductPrice,
+  DiscountInfo,
   
 } from "../../components/layout/ProductCard/styled";
-import { fontSize } from "@mui/system";
+
 
 function Products({ products, isLoading, isError }) {
   if (isLoading) {
@@ -46,17 +47,9 @@ function Products({ products, isLoading, isError }) {
                  
                   }}
                 >
-
-                  <p
-                   style={{
-                   margin: "0",
-                   color: "white",
-                   fontSize: "1.1rem",
-                    
-                   }}
-                  >
+                    <DiscountInfo  style={{color: "white" }}>
                     -{discount.toFixed(2)}% 
-                  </p>
+                    </DiscountInfo>
                 </div>
               )}
 
@@ -72,11 +65,10 @@ function Products({ products, isLoading, isError }) {
                   }}
                 >
 
-                  
 
-
-
-                  Save kr {(product.price - product.discountedPrice).toFixed(2)}
+              <DiscountInfo>
+                   Save kr {(product.price - product.discountedPrice).toFixed(2)}
+              </DiscountInfo> 
                 </div>
               )}
 

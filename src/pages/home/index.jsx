@@ -8,6 +8,7 @@ import {
   ProductImage,
   Button,
   ProductPrice,
+  
 } from "../../components/layout/ProductCard/styled";
 
 function Products({ products, isLoading, isError }) {
@@ -33,19 +34,34 @@ function Products({ products, isLoading, isError }) {
               <div
                 style={{
                   position: "absolute",
-                  top: "24px",
-                  left: "24px",
-                  padding: "10px",
+                  top: "28px",
+                  left: "28px",
+                  padding: "5px",
                   backgroundColor: "#ff0099",
+                  borderRadius: "5px",
+                  
                 }}
               >
                 {discount > 0 && (
                   <p>
-                    -{discount.toFixed(2)}% Save kr
-                    {(product.price - product.discountedPrice).toFixed(2)}
-                  </p>
+                    -{discount.toFixed(2)}% 
+                  </p>   
+
                 )}
+
               </div>
+              <div style={{
+                  position: "absolute",
+                  bottom: "32px",
+                  left: "28px",
+                  padding: "5px",
+                  backgroundColor: "yellow",
+                  borderRadius: "5px",
+                  
+                }}>
+              Save kr  {(product.price - product.discountedPrice).toFixed(2)}
+              </div>
+
             </div>
             <h2>{product.title}</h2>
             <ProductPrice isValid={isValid}>
@@ -56,7 +72,7 @@ function Products({ products, isLoading, isError }) {
                   <span style={{ textDecoration: "line-through" }}>
                     kr {product.price.toFixed(2)}
                   </span>{" "}
-                  | Now kr {newPrice}
+                   Now kr {newPrice}
                 </>
               )}
             </ProductPrice>

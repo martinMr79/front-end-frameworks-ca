@@ -1,4 +1,3 @@
-import { color } from '@mui/system';
 import styled from 'styled-components';
 
 export const CardContainer = styled.div` 
@@ -18,6 +17,14 @@ export const ProductPrice = styled.div `
     span {
       color: ${(props) => (props.isDiscounted ? "red" : "black")};
     }
+`;
+
+
+export const DiscountInfo = styled.p`
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #ff0099;
 `;
 
 
@@ -56,8 +63,7 @@ export const ProductCard = styled.div`
 }
 
   
-}
-  
+} 
 
 `;
 

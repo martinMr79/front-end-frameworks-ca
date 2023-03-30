@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { NavStyle } from "./styled"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from "../../../../hooks/useCart";
+import Logo from "../../../../assets/images/Logo.jpg"
 
 function Nav() {
   const { cart } = useCart();
@@ -10,9 +11,9 @@ function Nav() {
   return (
     <NavStyle>
       <nav>
+        <Link to="/"><img src={Logo} alt="Logo" /></Link>
         <Link to="/">Home</Link>
         <Link to="/Contact">Contact</Link>
-    
         <Link to="/Cart"><ShoppingCartIcon/>{cart.length > 0 && <span>{cart.length}</span>}</Link>
       </nav>
     </NavStyle>

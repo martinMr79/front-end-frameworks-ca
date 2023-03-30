@@ -7,10 +7,10 @@ export const FooterStyle = styled.footer`
   min-height: 100vh;
 
   footer {
-    background-color: #311721; 
+    background-color: #F01211; 
     color: white;
     text-align: center;
-    padding: 8px;
+    padding: 30px 0;
     font-size: 1rem;
     width: 100%;
     flex-shrink: 0;

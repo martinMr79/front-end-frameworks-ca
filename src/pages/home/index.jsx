@@ -9,8 +9,10 @@ import {
   ProductImage,
   Button,
   ProductPrice,
+  DiscountInfo,
   
 } from "../../components/layout/ProductCard/styled";
+
 
 function Products({ products, isLoading, isError }) {
   if (isLoading) {
@@ -40,18 +42,14 @@ function Products({ products, isLoading, isError }) {
                     top: "28px",
                     left: "28px",
                     padding: "5px",          
-                    backgroundColor: "#ff0099",
+                    backgroundColor: "#F01211",
                     borderRadius: "10px",
+                 
                   }}
                 >
-
-                  <p
-                   style={{
-                   margin: "0"
-                   }}
-                  >
+                    <DiscountInfo  style={{color: "white" }}>
                     -{discount.toFixed(2)}% 
-                  </p>
+                    </DiscountInfo>
                 </div>
               )}
 
@@ -62,11 +60,15 @@ function Products({ products, isLoading, isError }) {
                     bottom: "32px",
                     left: "28px",
                     padding: "5px",
-                    backgroundColor: "yellow",
+                    backgroundColor: "#E8CE58",
                     borderRadius: "10px",
                   }}
                 >
-                  Save kr {(product.price - product.discountedPrice).toFixed(2)}
+
+
+              <DiscountInfo>
+                   Save kr {(product.price - product.discountedPrice).toFixed(2)}
+              </DiscountInfo> 
                 </div>
               )}
 

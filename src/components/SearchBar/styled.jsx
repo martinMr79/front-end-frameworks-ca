@@ -35,6 +35,7 @@ div {
     align-items: center;
     margin-top: -17px;
     border: 2px solid grey;
+    z-index: 99;
 }
 
  ul {
@@ -42,6 +43,7 @@ div {
     display: inline-block;
     list-style-type: none;
     list-item-style:none; 
+    
 }
     
 
@@ -55,6 +57,7 @@ div {
 img {
     height: 60px;
     padding-right: 5px;
+   
 }
 
 a {

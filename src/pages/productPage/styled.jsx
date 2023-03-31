@@ -87,8 +87,8 @@ export const AddToCartButton = styled.button`
   padding: 10px 30px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-  
+  margin: auto;
+  display: block;
 
   :hover {
     background-color: white;

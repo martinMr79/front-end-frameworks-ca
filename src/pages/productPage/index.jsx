@@ -24,19 +24,29 @@ function ProductPage(){
   
   return (
     <div>
-
+      <h2>Product Details</h2>
 
       <S.ProductWrapper> 
-        <S.ProductHeading>{data.title}</S.ProductHeading>
+        
         <S.ProductImageContainer>
           <S.ProductImage src={data.imageUrl} alt={data.title}/>
         </S.ProductImageContainer>
-        <S.RatingStarsContainer>*****</S.RatingStarsContainer>
-        <S.PricesContainer>
+        
+
+        
+        <S.ProductDetailsWrapper>
+    <S.ProductDetailsContainer>
+    <S.ProductHeading>{data.title}</S.ProductHeading>
+      
+      <p>{data.description}</p>
+      <S.RatingStarsContainer>*****</S.RatingStarsContainer>
+      <S.PricesContainer>
           <S.Price isValid={data.price === data.discountedPrice}>{data.price}</S.Price>
           <div>Now Only! kr{data.discountedPrice < data.price && data.discountedPrice}</div>
         </S.PricesContainer>
-        <S.AddToCartButton onClick={addToCartClick}>ADD TO CART</S.AddToCartButton>
+      <S.AddToCartButton onClick={addToCartClick}>ADD TO CART</S.AddToCartButton>
+    </S.ProductDetailsContainer>
+  </S.ProductDetailsWrapper>
       </S.ProductWrapper>
 
       {/*<main>  

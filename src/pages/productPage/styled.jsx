@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ProductWrapper = styled.div`
-  border: 1px solid black;
+  
   display: flex;
   flex-direction: column;
   max-width: 950px;
@@ -9,6 +9,9 @@ export const ProductWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 0;
+  border-radius: 8px;
+  background-color: #F8F9FA;  
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -19,6 +22,7 @@ export const ProductImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
   
 
   @media screen and (min-width: 768px) {
@@ -31,6 +35,7 @@ export const ProductImage = styled.img`
   width: 100%;
   object-fit: contain;
   max-width: 100%;
+  border-radius: 8px;
 
   @media screen and (min-width: 768px) {
     object-fit: cover;
@@ -48,7 +53,7 @@ export const ProductDetailsContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 10px;
+  padding: 2rem;
   max-width: 750px;
   margin: 20px auto;
   flex: 1;
@@ -63,7 +68,10 @@ export const ProductHeading = styled.h1`
 
 `;
 
-export const RatingStarsContainer = styled.div``;
+export const RatingStarsContainer = styled.div`
+  margin: auto;
+  color: #E8CE58;
+`;
 
 export const PricesContainer = styled.div`
   display: flex;

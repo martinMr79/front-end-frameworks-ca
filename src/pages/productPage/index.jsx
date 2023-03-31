@@ -72,7 +72,6 @@ function ProductPage() {
           <h2>Reviews</h2>
           {data.reviews.map((review) => (
             <div key={review.id}>
-              <p>Rating: {review.rating}</p>
               <p>Description: {review.description}</p>
               <p>Username: {review.username}</p>
             </div>

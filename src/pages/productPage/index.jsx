@@ -50,13 +50,14 @@ function ProductPage() {
         <S.ProductDetailsWrapper>
           <S.ProductDetailsContainer>
             <p>{data.description}</p>
+            
             <S.RatingStarsContainer>{ratingStars}</S.RatingStarsContainer>
             <S.PricesContainer>
-              <S.Price isValid={data.price === data.discountedPrice}>
+              <S.Price isValid={data.price === data.discountedPrice}>kr {" "}
                 {data.price}
               </S.Price>
               <div>
-                Now Only! kr
+                Now Only! kr {" "}
                 {data.discountedPrice < data.price && data.discountedPrice}
               </div>
             </S.PricesContainer>

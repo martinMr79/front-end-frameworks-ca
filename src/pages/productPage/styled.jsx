@@ -71,14 +71,20 @@ export const ProductHeading = styled.h1`
 export const RatingStarsContainer = styled.div`
   margin: auto;
   color: #E8CE58;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 `;
+
+
 
 export const PricesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  margin-top: 2rem;
   width: 100%;
+  font-size: 1.2rem
 `;
 
 export const Price = styled.div`
@@ -95,7 +101,7 @@ export const AddToCartButton = styled.button`
   padding: 10px 30px;
   border-radius: 5px;
   cursor: pointer;
-  margin: auto;
+  margin: 4rem auto 0; ;
   display: block;
 
   :hover {
@@ -104,7 +110,7 @@ export const AddToCartButton = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: 0;
+    margin-top: 4rem;
     
   }
 `;

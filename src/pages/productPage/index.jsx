@@ -24,7 +24,7 @@ function ProductPage(){
   
   return (
     <div>
-      <h2>Product Details</h2>
+      <S.ProductHeading>{data.title}</S.ProductHeading>
 
       <S.ProductWrapper> 
         
@@ -36,7 +36,7 @@ function ProductPage(){
         
         <S.ProductDetailsWrapper>
     <S.ProductDetailsContainer>
-    <S.ProductHeading>{data.title}</S.ProductHeading>
+    
       
       <p>{data.description}</p>
       <S.RatingStarsContainer>*****</S.RatingStarsContainer>
@@ -48,15 +48,7 @@ function ProductPage(){
     </S.ProductDetailsContainer>
   </S.ProductDetailsWrapper>
       </S.ProductWrapper>
-
-      {/*<main>  
-        <img src={data.imageUrl} alt={data.title} />
-        <h1>{data.title}</h1>
-        <p>{data.description}</p>
-        <p>Price kr{data.price}</p>
-        {data.price !== data.discountedPrice && (
-          <p>Now Only! kr{data.discountedPrice}</p>
-        )}
+      
         {data?.reviews && (
           <div>
             <h2>Reviews</h2>
@@ -69,6 +61,15 @@ function ProductPage(){
             ))}
           </div>
         )}
+
+      {/*<main>  
+        <img src={data.imageUrl} alt={data.title} />
+       
+        <p>{data.description}</p>
+        <p>Price kr{data.price}</p>
+        {data.price !== data.discountedPrice && (
+          <p>Now Only! kr{data.discountedPrice}</p>
+
       </main>*/}
     </div>
   );

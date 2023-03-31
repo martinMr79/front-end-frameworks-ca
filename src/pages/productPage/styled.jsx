@@ -4,7 +4,7 @@ export const ProductWrapper = styled.div`
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  max-width: 750px;
+  max-width: 950px;
   margin: 20px auto;
   justify-content: center;
   align-items: center;
@@ -27,14 +27,14 @@ export const ProductImageContainer = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  height: 95%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
   max-width: 100%;
 
   @media screen and (min-width: 768px) {
     object-fit: cover;
-    max-height: 800px;
+    max-height: 850px;
   }
 `;
 
@@ -58,7 +58,10 @@ export const ProductDetailsContainer = styled.div`
   }
 `;
 
-export const ProductHeading = styled.h3``;
+export const ProductHeading = styled.h1`
+  margin-bottom: 3rem;
+
+`;
 
 export const RatingStarsContainer = styled.div``;
 
@@ -66,6 +69,7 @@ export const PricesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   width: 100%;
 `;
 
@@ -76,13 +80,15 @@ export const Price = styled.div`
 `;
 
 export const AddToCartButton = styled.button`
+  
   background-color: black;
   color: white;
-  font-size: 20px;
-  padding: 10px 60px;
+  font-size: 18px;
+  padding: 10px 30px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  
 
   :hover {
     background-color: white;
@@ -91,5 +97,6 @@ export const AddToCartButton = styled.button`
 
   @media screen and (min-width: 768px) {
     margin-top: 0;
+    
   }
 `;

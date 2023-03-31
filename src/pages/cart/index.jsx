@@ -31,7 +31,7 @@ function CartPage() {
           </ul>
           </CartItems>
           <CartCount>
-          <p>Total price: kr {totalPrice}</p>
+          <p>Total price: kr {totalPrice.toFixed(2)}</p>
           </CartCount>
           <ClearCartButton onClick={clearCart}>
             CLEAR CART

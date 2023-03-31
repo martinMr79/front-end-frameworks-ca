@@ -5,7 +5,7 @@ export const NavStyle = styled.nav`
 nav {
   border: 0;
   background: none;
-  background-color: #311721;
+  background-color: #white;
   min-height: 60px;
   text-decoration: none;
   text-align: start;
@@ -22,12 +22,19 @@ nav a {
   align-items: center;
   text-align: center;
   font-size: 1rem;
-  color: white;
+  color: black;
   
 };
 
 nav a:hover {
-  color: #FFDAB9;
+  color: #F01211;
+}
+
+img {
+
+  height: 70px; 
+  margin: 10px;
+
 }
 
 `

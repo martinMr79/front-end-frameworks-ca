@@ -73,7 +73,8 @@ export const RatingStarsContainer = styled.div`
   color: #E8CE58;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem
 `;
 
 

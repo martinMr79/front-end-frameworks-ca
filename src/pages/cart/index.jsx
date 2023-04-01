@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { CartCount, CartItems, ClearCartButton } from './styled';
 
-
-/**
- * 
- * @returns Calculate total price and quantity of each product in the cart
- */
 function CartPage() {
   const { cart, products, clearCart } = useCart();
+  const [cartItems, setCartItems] = useState(cart);
 
   // Calculate total price and quantity of each product in the cart
-  const [cartItems, setCartItems] = useState(cart.reduce((acc, productId) => {
+  const cartItemsWithQuantity = cartItems.reduce((acc, productId) => {
     const product = products.find(p => p.id === productId);
     if (product) {
       if (acc[productId]) {
@@ -28,39 +24,30 @@ function CartPage() {
       }
     }
     return acc;
-  }, {}));
+  }, {});
 
   // Convert object of product IDs and quantities to array of arrays
-  const cartItemsArray = Object.entries(cartItems);
+  const cartItemsArray = Object.entries(cartItemsWithQuantity);
 
   // Calculate total price of all items in the cart
   const totalPrice = cartItemsArray.reduce((acc, [productId, item]) => {
     return acc + item.totalPrice; 
   }, 0);
 
-  // Function to handle incrementing the quantity of an item in the cart
-  const handleIncrement = (productId) => {
-    setCartItems(prevCartItems => {
-      const updatedCartItems = { ...prevCartItems };
-      updatedCartItems[productId].quantity++;
-      updatedCartItems[productId].totalPrice += updatedCartItems[productId].product.price;
-      return updatedCartItems;
-    });
-  };
+  const incrementQuantity = (productId) => {
+    const newCartItems = [...cartItems];
+    newCartItems.push(productId);
+    setCartItems(newCartItems);
+  }
 
-  // Function to handle decrementing the quantity of an item in the cart
-  const handleDecrement = (productId) => {
-    setCartItems(prevCartItems => {
-      const updatedCartItems = { ...prevCartItems };
-      if (updatedCartItems[productId].quantity === 1) {
-        delete updatedCartItems[productId];
-      } else {
-        updatedCartItems[productId].quantity--;
-        updatedCartItems[productId].totalPrice -= updatedCartItems[productId].product.price;
-      }
-      return updatedCartItems;
-    });
-  };
+  const decrementQuantity = (productId) => {
+    const newCartItems = [...cartItems];
+    const index = newCartItems.indexOf(productId);
+    if (index > -1) {
+      newCartItems.splice(index, 1);
+    }
+    setCartItems(newCartItems);
+  }
 
   return (
     <div>
@@ -74,21 +61,15 @@ function CartPage() {
             <ul>
               {cartItemsArray.map(([productId, item]) => (
                 <li key={productId}>
-                  <img src={item.imageUrl} alt={item.title} />
-                  <div>
-                    <div>{item.product.title}</div>
-                    <div>
-                      <button onClick={() => handleDecrement(productId)}>-</button>
-                      {item.quantity}
-                      <button onClick={() => handleIncrement(productId)}>+</button>
-                    </div>
-                    <div>
-                      Unit price: kr {item.product.price.toFixed(2)}
-                    </div>
-                    <div>
-                      Total: kr {(item.totalPrice).toFixed(2)}
-                    </div>
-                  </div>
+                  <img src={item.product.imageUrl} alt={item.product.title} />
+                  {item.product.title} ({item.quantity}) 
+                  <br />
+                  Unit price: kr {item.product.price.toFixed(2)} 
+                  <br />
+                  Total: kr {(item.totalPrice).toFixed(2)}
+                  <br />
+                  <button onClick={() => incrementQuantity(productId)}>+</button>
+                  <button onClick={() => decrementQuantity(productId)}>-</button>
                 </li>
               ))}
             </ul>
@@ -96,7 +77,9 @@ function CartPage() {
           <CartCount>
             <p>Total price: kr {totalPrice.toFixed(2)}</p>
           </CartCount>
-          <ClearCartButton onClick={clearCart}>CLEAR CART</ClearCartButton>
+          <ClearCartButton onClick={clearCart}>
+            CLEAR CART
+          </ClearCartButton>
         </>
       )}
     </div>

@@ -38,9 +38,6 @@ const useCartStore = create((set) => ({
     const cart = useCartStore((state) => state.cart); 
     const clearCart = useCartStore((state) => state.clearCart); 
   
-    console.log('Products:', products); // add console log here
-    console.log('Cart:', cart); // add console log here
-  
     function addToCart(id) {
       console.log('Add to cart', id); 
       addProductToCart(id);

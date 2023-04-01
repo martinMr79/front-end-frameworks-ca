@@ -11,13 +11,16 @@ padding: 2px 5px;
 export const CartItems = styled.div `
 color: black;
 
+
 padding: 2px 5px;
 
     li {
+        
         margin-bottom: 1rem;
         text-decoration: none;
         font-size: 18px;
         list-style-type: none;
+        border: 1px solid
     }
 `; 
 

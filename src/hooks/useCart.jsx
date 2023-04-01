@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { useEffect } from 'react';
 import { baseURL } from '../utilities/constants';
-import { Link } from 'react-router-dom';
 
 const useCartStore = create((set) => ({
   products: [],

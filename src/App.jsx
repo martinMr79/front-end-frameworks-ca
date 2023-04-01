@@ -1,9 +1,9 @@
 import React from "react";
-import { Nav, Checkout, CheckoutSuccess } from "./components/layout/Header/Nav";
+import { Nav, Checkout} from "./components/layout/Header/Nav";
 import { CartPage } from "./pages/cart";
 import Footer from "./components/layout/Footer/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, ProductPage, ContactPage } from "./pages";
+import { Home, ProductPage, ContactPage, CheckoutSuccess } from "./pages";
 import { useCart } from "./hooks/useCart";
 
 function App() {

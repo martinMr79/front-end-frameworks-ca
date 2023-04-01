@@ -41,15 +41,19 @@ function CartPage() {
         <p>Your cart is empty</p>
       ) : (
         <>
-          <CartItems>
-            <ul>
-              {cartItemsArray.map(([productId, item]) => (
-                <li key={productId}>
-                  {item.product.title} ({item.quantity}) - kr {item.totalPrice.toFixed(2)}
-                </li>
-              ))}
-            </ul>
-          </CartItems>
+<CartItems>
+  <ul>
+    {cartItemsArray.map(([productId, item]) => (
+      <li key={productId}>
+        {item.product.title} ({item.quantity}) 
+        <br/>
+        Unit price: kr {item.product.price.toFixed(2)}
+        <br/>
+        Total: kr {(item.totalPrice).toFixed(2)}
+      </li>
+    ))}
+  </ul>
+</CartItems>
           <CartCount>
             <p>Total price: kr {totalPrice.toFixed(2)}</p>
           </CartCount>

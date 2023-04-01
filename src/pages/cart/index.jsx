@@ -87,7 +87,7 @@ function CartPage() {
             <p>Total price: kr {totalPrice.toFixed(2)}</p>
           </CartCount>
           <ClearCartButton onClick={clearCart}>
-            CLEAR CART
+            Checkout
           </ClearCartButton>
         </>
       )}

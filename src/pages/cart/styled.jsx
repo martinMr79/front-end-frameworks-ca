@@ -46,6 +46,26 @@ export const CartItems = styled.div`
     padding-right 5px;
   }
 
+  .quantity {
+    margin: 0 5px;
+  }
+  
+  .quantity-btn {
+    margin-left: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #f2f2f2;
+  }
+
   @media (max-width: 768px) {
     li {
       flex-direction: column;

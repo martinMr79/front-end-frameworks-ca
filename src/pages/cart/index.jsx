@@ -3,7 +3,7 @@ import { useCart } from '../../hooks/useCart';
 import { CartCount, CartItems, ClearCartButton } from './styled';
 
 function CartPage() {
-  const { cart, products, clearCart } = useCart();
+  const { cart, products, clearCart} = useCart();
   const [cartItems, setCartItems] = useState(cart);
 
   // Calculate total price and quantity of each product in the cart
@@ -58,21 +58,30 @@ function CartPage() {
       ) : (
         <>
           <CartItems>
-            <ul>
-              {cartItemsArray.map(([productId, item]) => (
-                <li key={productId}>
-                  <img src={item.product.imageUrl} alt={item.product.title} />
-                  {item.product.title} ({item.quantity}) 
-                  <br />
-                  Unit price: kr {item.product.price.toFixed(2)} 
-                  <br />
-                  Total: kr {(item.totalPrice).toFixed(2)}
-                  <br />
-                  <button onClick={() => incrementQuantity(productId)}>+</button>
-                  <button onClick={() => decrementQuantity(productId)}>-</button>
-                </li>
-              ))}
-            </ul>
+          <ul>
+  {cartItemsArray.map(([productId, item]) => (
+    <li key={productId}>
+      <img src={item.product.imageUrl} alt={item.product.title} />
+      <div>
+        <div>
+          {item.product.title}
+        </div>
+        <div>
+          Unit price: kr {item.product.price.toFixed(2)}
+        </div>
+        <div>
+          Total: kr {(item.totalPrice).toFixed(2)}
+        </div>
+        <div>
+          Qty: 
+          <span className="quantity">{item.quantity}</span>
+          <button className="quantity-btn" onClick={() => incrementQuantity(productId)}>+</button>
+          <button className="quantity-btn" onClick={() => decrementQuantity(productId)}>-</button>
+        </div>
+      </div>
+    </li>
+  ))}
+</ul>
           </CartItems>
           <CartCount>
             <p>Total price: kr {totalPrice.toFixed(2)}</p>

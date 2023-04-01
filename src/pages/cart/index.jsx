@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { CartCount, CartItems, ClearCartButton } from './styled';
+import { Link } from 'react-router-dom';
 
 function CartPage() {
   const { cart, products, clearCart} = useCart();
@@ -86,9 +87,11 @@ function CartPage() {
           <CartCount>
             <p>Total price: kr {totalPrice.toFixed(2)}</p>
           </CartCount>
-          <ClearCartButton onClick={clearCart}>
-            Checkout
-          </ClearCartButton>
+          <Link to="/CheckoutSuccess">
+            <ClearCartButton onClick={clearCart}>
+              Checkout
+            </ClearCartButton>
+          </Link>
         </>
       )}
     </div>

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
-import { SuccessPage, SuccessText } from './styled';
+import { SuccessPage, SuccessText, ContinueShoppingLink } from './styled';
 
 function CheckoutSuccess() {
   return (
@@ -11,9 +10,9 @@ function CheckoutSuccess() {
         Thank you for your purchase!<br />
         Your order has been processed successfully.
       </SuccessText>
-      <Link to="/">
-        Continue shopping
-      </Link>
+ 
+       <ContinueShoppingLink to="/">Continue Shopping</ContinueShoppingLink>
+  
     </SuccessPage>
   );
 }

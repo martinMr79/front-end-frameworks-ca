@@ -11,7 +11,6 @@ import { CartCount, CartItems, ClearCartButton } from './styled';
 function CartPage() {
   const { cart, products, clearCart } = useCart();
 
-  // Calculate total price and quantity of each product in the cart
   const cartItems = cart.reduce((acc, productId) => {
     const product = products.find(p => p.id === productId);
     if (product) {
@@ -25,14 +24,14 @@ function CartPage() {
           product,
           quantity: 1,
           totalPrice: product.price,
-          imageUrl: product.imageUrl, // add imageUrl property
+          imageUrl: product.imageUrl, 
         };
       }
     }
     return acc;
   }, {});
 
-  // Convert object of product IDs and quantities to array of arrays
+
   const cartItemsArray = Object.entries(cartItems);
 
   // Calculate total price of all items in the cart
@@ -48,20 +47,22 @@ function CartPage() {
         <p>Your cart is empty</p>
       ) : (
         <>
-          <CartItems>
-            <ul>
-              {cartItemsArray.map(([productId, item]) => (
-                <li key={productId}>
-                  <img src={item.imageUrl} alt={item.title} />
-                  {item.product.title} ({item.quantity})
-                  <br />
-                  Unit price: kr {item.product.price.toFixed(2)}
-                  <br />
-                  Total: kr {(item.totalPrice).toFixed(2)}
-                </li>
-              ))}
-            </ul>
-          </CartItems>
+<CartItems>
+  <ul>
+    {cartItemsArray.map(([productId, item]) => (
+      <li key={productId}>
+        <img src={item.imageUrl} alt={item.title} />
+        {item.product.title} ({item.quantity})
+        <div className="price">
+          Unit price: kr {item.product.price.toFixed(2)}
+          <br />
+          Total: kr {(item.totalPrice).toFixed(2)}
+        </div>
+      </li>
+    ))}
+  </ul>
+</CartItems>
+
           <CartCount>
             <p>Total price: kr {totalPrice.toFixed(2)}</p>
           </CartCount>

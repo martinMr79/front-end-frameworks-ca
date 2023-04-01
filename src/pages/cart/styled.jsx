@@ -24,19 +24,47 @@ export const CartItems = styled.div`
 
   li {
     display: flex;
+    align-items: center;
     margin-bottom: 1rem;
     text-decoration: none;
     font-size: 18px;
     list-style-type: none;
     border: 1px solid;
     width: 600px;
- 
+    
   }
 
   img {
     height: 80px;
     margin-right: 1rem;
   }
+
+
+  .price {
+    margin-left: auto;
+    padding-right 5px;
+  }
+
+  @media (max-width: 768px) {
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 280px; 
+      
+    }
+    img {
+      margin-bottom: 10px;
+    }
+
+    .price {
+        margin-left: 5px;
+        
+      }
+    
+
+  }
+
+
 `;
 
 export const ClearCartButton = styled.button`

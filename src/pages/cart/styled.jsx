@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 export const CartCount = styled.div `
 color: black;
 font-weight: bold;
@@ -64,8 +65,16 @@ export const CartItems = styled.div`
 
   }
 
-
 `;
+
+export const QuantityButton = styled.button`
+  background-color: #eee;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0 0.5rem;
+`;
+
 
 export const ClearCartButton = styled.button`
 background-color: black;

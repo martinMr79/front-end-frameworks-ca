@@ -36,7 +36,7 @@ export const CartItems = styled.div`
   }
 
   img {
-    height: 80px;
+    height: 150px;
     margin-right: 1rem;
   }
 

@@ -52,7 +52,7 @@ export const CartItems = styled.div`
   
   .quantity-btn {
     margin-left: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 3px 7px;
@@ -87,27 +87,17 @@ export const CartItems = styled.div`
 
 `;
 
-export const QuantityButton = styled.button`
-  background-color: #eee;
-  border: none;
-  font-size: 1.5rem;
-  padding: 0.25rem 0.5rem;
-  margin: 0 0.5rem;
-
-`;
-
-
-export const ClearCartButton = styled.button`
+export const CheckoutButton = styled.button`
 background-color: black;
 color: white;
 font-size: 1rem;
 padding: 10px 30px;
 border-radius: 5px;
-margin: 30px 0px;
+margin-bottom: 100px;
+margin-top: 30px; 
 cursor: pointer;
  :hover {
-    background-color: red;
-    color: white;
+    background-color: green;
  }
 `
 

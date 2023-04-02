@@ -20,27 +20,21 @@ function Nav() {
   );
 }
 
-function Contact() {
-  return <div>Contact</div>;
-}
 
 function Checkout() {
   return <div>Checkout</div>;
 }
 
-function CheckoutSuccess() {
-  return <div>Checkout Success</div>;
-}
 
 function Product() {
   let params = useParams();
-  console.log(params);
+
   // Logs the id of whichever product page you are on e.g.
   // {id: '1'} or {id: '2'}
   return <div>Individual product page: {params.id}</div>;
 }
 
-export { Nav, Product, Contact, Checkout, CheckoutSuccess };
+export { Nav, Product, Checkout };
 
 
 

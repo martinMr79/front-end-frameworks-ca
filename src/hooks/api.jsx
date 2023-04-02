@@ -14,7 +14,6 @@ export function useAPI(url) {
         const json = await response.json();
         setData(json);
       } catch (error) {
-        console.log(error);
         setHasError(true);
       } finally {
         setIsLoading(false);

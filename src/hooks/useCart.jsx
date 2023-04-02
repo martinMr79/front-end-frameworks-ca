@@ -7,7 +7,7 @@ const useCartStore = create((set) => ({
   isLoading: false, 
   hasErrors: false, 
   cart: [],
-  setCart: (newCart) => set({ cart: newCart }), // Define setCart in your state object
+  setCart: (newCart) => set({ cart: newCart }), 
   addProductToCart: (id) =>
     set((state) => {
       const selectedProduct = state.products.find((product) => product.id === id);
@@ -16,12 +16,12 @@ const useCartStore = create((set) => ({
     }),
   clearCart: () => set({ cart: [] }),
   fetchProducts: async (url) => {
-    console.log('Fetching products...'); // add console log here
+   
     set(() => ({loading: true}))  
     try {
       const response = await fetch(url)
       const json = await response.json();
-      console.log('Finished fetching products.'); // add console log here
+      
       set((state) => ({ products: (state.products = json), isLoading: false}))
     } catch(error) {
       set(() => ({hasErrors: true, isLoading: false}))   
@@ -37,16 +37,16 @@ function useCart() {
   const hasErrors = useCartStore((state) => state.hasErrors); 
   const cart = useCartStore((state) => state.cart); 
   const clearCart = useCartStore((state) => state.clearCart); 
-  const setCart = useCartStore((state) => state.setCart); // Define setCart in your hook
+  const setCart = useCartStore((state) => state.setCart); 
   
   function addToCart(id) {
-    console.log('Add to cart', id); 
+
     addProductToCart(id);
   }
 
   useEffect(() => {
     fetchProducts(baseURL);
-  }, [fetchProducts]); // call fetchProducts when component mounts
+  }, [fetchProducts]); 
 
   return { products, cart, fetchProducts, isLoading, hasErrors, addToCart, clearCart, setCart };
 }

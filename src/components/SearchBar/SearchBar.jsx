@@ -17,8 +17,6 @@ function AutocompleteSearchBar() {
     setSearchTerm(event.target.value);
   };
 
-  console.log(searchResults)
-
   useEffect(() => {
     if (!isLoading && data && data.length && searchTerm.length >= 2) {
       const results = data.filter((item) =>

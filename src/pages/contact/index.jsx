@@ -55,7 +55,7 @@ function Form() {
 
   function onSubmit(data) {
     window.alert(`Thank you ${data.fullName} for contacting us! We will get back to you soon.`);
-    console.log(data);
+
   }
 
   return (

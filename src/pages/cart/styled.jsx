@@ -97,7 +97,7 @@ export const QuantityButton = styled.button`
 `;
 
 
-export const ClearCartButton = styled.button`
+export const CheckoutButton = styled.button`
 background-color: black;
 color: white;
 font-size: 1rem;

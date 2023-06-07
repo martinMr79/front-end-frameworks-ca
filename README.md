@@ -1,24 +1,20 @@
 # ECOM.COM
 
-![FrontPageImg](https://github.com/martinMr79/front-end-frameworks-ca/assets/)
+![HomPageImg](https://github.com/martinMr79/front-end-frameworks-ca/blob/master/src/assets/images/HomPageImg.PNG)
 
-Bargain Basement Auction is a website where users can add items to be bid on and bid on items listed by other users.
-
-When a new user joins the website, they are given 1000 credits to use for bidding on items. Users can earn additional credits by selling items, and they can utilize their credits to purchase items. Non-registered users can search through the listings, but only registered users can place bids on items.
+This project is an e-commerce store built using React, aimed at applying knowledge of React and creating a functional e-commerce website. It utilizes the API provided at https://api.noroff.dev/api/v1/online-shop for retrieving product data.
 
 ## Functions and Features
 
-- Registration: Users with a `stud.noroff.no` email can create an account.
-- Login: Registered users can log in to their accounts.
-- Logout: Logged-in users can log out of their accounts.
-- Avatar Update: Registered users can update their avatar.
-- Create Listing: Registered users can create a new listing by providing a title, deadline date, media, and description.
-- Place Bids: Users can place bids on listings created by other users.
-- View Highest Bid: Registered users can see the highest bid placed on a listing.
-- View Credit Balance: Users can view their total credit balance.
-- Earn Credit: Registered users can earn credits by receiving successful bids on their own listings.
-- Use Credit: Registered users can utilize their credits to place bids on other users' listings.
-- Search Listings: Both registered and unregistered users can search for listings.
+Homepage: This page displays a list of all products available in the store. It includes a look-ahead search bar that filters products based on the user's input. Clicking on a product takes the user to the individual product page.
+
+Individual product page: This page shows the details of a single product. It includes the product's title, description, image, and any available reviews. The page also displays the price of the product, taking into account any discounts. Users can add the product to their cart from this page.
+
+Cart page: The cart page displays a list of all products added to the cart. It also shows the total price of all items in the cart. Users can proceed to checkout from this page.
+
+Checkout success page: After a successful checkout, this page displays a message notifying the user about their order. It provides a link to go back to the store, and the cart is cleared.
+
+Contact page: The contact page includes a contact form with fields for full name, subject, email, and body. The form has validation requirements, and once the form data meets the validation criteria, it is logged to the console.
 
 ## Built With
 

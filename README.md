@@ -6,20 +6,42 @@ This project is an e-commerce store built using React, aimed at applying knowled
 
 ## Functions and Features
 
-Homepage: This page displays a list of all products available in the store. It includes a look-ahead search bar that filters products based on the user's input. Clicking on a product takes the user to the individual product page.
+##### Components
 
-Individual product page: This page shows the details of a single product. It includes the product's title, description, image, and any available reviews. The page also displays the price of the product, taking into account any discounts. Users can add the product to their cart from this page.
+- Header: The header component contains a navigation bar and a cart icon component.
+- Cart Icon: This component acts as a button and also displays the current number of items in the cart.
 
-Cart page: The cart page displays a list of all products added to the cart. It also shows the total price of all items in the cart. Users can proceed to checkout from this page.
+##### Homepage:
+This page displays a list of all products available in the store. It includes a look-ahead search bar that filters products based on the user's input. Clicking on a product takes the user to the individual product page.
 
-Checkout success page: After a successful checkout, this page displays a message notifying the user about their order. It provides a link to go back to the store, and the cart is cleared.
+##### Individual product page: 
+This page shows the details of a single product. It includes the product's title, description, image, and any available reviews. The page also displays the price of the product, taking into account any discounts. Users can add the product to their cart from this page.
 
-Contact page: The contact page includes a contact form with fields for full name, subject, email, and body. The form has validation requirements, and once the form data meets the validation criteria, it is logged to the console.
+##### Cart page:
+The cart page displays a list of all products added to the cart. It also shows the total price of all items in the cart. Users can proceed to checkout from this page.
+
+##### Checkout: 
+success page: After a successful checkout, this page displays a message notifying the user about their order. It provides a link to go back to the store, and the cart is cleared.
+
+##### Contact page:
+The contact page includes a contact form with fields for full name, subject, email, and body. The form has validation requirements, and once the form data meets the validation criteria, it is logged to the console.
+
+
+
 
 ## Built With
 
-- [Tailwind CSS (>3)](https://tailwindcss.com)
-- [Vanilla JavaScript](https://www.javascript.com)
+- [React](https://reactjs.org)
+- [Styled Components](https://styled-components.com)
+
+The ecom.com project was built using React, a popular JavaScript library for building user interfaces. It leverages the powerful capabilities of React to create dynamic and interactive components.
+Styled Components, another key technology used in the project, allows for the creation of reusable and encapsulated styling for React components. It provides a seamless integration of CSS within the component code, enhancing modularity and maintainability.
+
+In addition to these technologies, the project also utilized:
+
+
+For a complete list of dependencies used in the project, please refer to the `package.json` file provided above.
+
 
 ### API
 

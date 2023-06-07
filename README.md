@@ -4,6 +4,8 @@
 
 This project is an e-commerce store built using React, aimed at applying knowledge of React and creating a functional e-commerce website. It utilizes the API provided at https://api.noroff.dev/api/v1/online-shop for retrieving product data.
 
+<br/>
+
 ## Functions and Features
 
 ##### Components
@@ -37,38 +39,9 @@ The contact page includes a contact form with fields for full name, subject, ema
 The ecom.com project was built using React, a popular JavaScript library for building user interfaces. It leverages the powerful capabilities of React to create dynamic and interactive components.
 Styled Components, another key technology used in the project, allows for the creation of reusable and encapsulated styling for React components. It provides a seamless integration of CSS within the component code, enhancing modularity and maintainability.
 
-In addition to these technologies, the project also utilized:
+## Demo
 
-
-For a complete list of dependencies used in the project, please refer to the `package.json` file provided above.
-
-
-### API
-
-The API used for this project can be found under Auction EndPoints in the [Noroff API documentation](https://docs.noroff.dev/auctionhouse-endpoints/authentication). API functionality is managed by an existing application. This project only covers the front-end application for the API.
-
-### Hosting Service
-
-- [Netlify](https://www.netlify.com)
-
-### Design Application
-
-- [Adobe XD](https://www.adobe.com/products/xd.html)
-
-### Husky
-
-[Husky](https://typicode.github.io/husky) For streamlined Git hooks.
-
-### Planning applications
-
-- [Trello](https://trello.com)
-- [TeamGantt](https://www.teamgantt.com)
-
-## Demo 
-
-Netlify deployment link: [Bargain Basement Auction](https://snazzy-cupcake-064c05.netlify.app)
-
-
+- [Netlify](https://cute-gumdrop-5dee9b.netlify.app)
 
 ## Getting Started
 
@@ -103,76 +76,3 @@ Contributions to this project are welcome. If you would like to contribute, plea
 ## License
 
 This project is licensed under the [MIT](https://www.mit.edu/~amini/LICENSE.md) License. You can find the license details 
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

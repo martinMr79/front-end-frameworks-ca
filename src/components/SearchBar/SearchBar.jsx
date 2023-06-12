@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAPI } from "../../hooks/api";
 import { baseURL } from "../../utilities/constants";
-import { StyledInput } from "./styled";
+import { StyledInput, StyledNoResults } from "./styled";
 import { StyledResults } from "./styled";
 import { Link } from "react-router-dom"
 
@@ -39,35 +39,39 @@ function AutocompleteSearchBar() {
   return (
     <div>
       <StyledInput>
-    <div>
-    <input type="text" value={searchTerm} onChange={handleInputChange} placeholder="Search here"/>
-    </div>
+        <div>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={handleInputChange}
+            placeholder="Search here"
+          />
+        </div>
       </StyledInput>
-      
-    {searchResults.length ? (
+  
+      {(searchResults.length > 0 && searchTerm.length >= 2) ? (
         <ul>
           {searchResults.map((item) => (
             <StyledResults>
-             <container>
-              <div>
-              <Link to={`/product/${item.id}`}>
-              <li key={item.id}> <img src= {item.imageUrl} alt= {item.title}></img> {item.title} kr {item.discountedPrice}</li>
-              </Link>           
-              </div>
-              </container> 
+              <container>
+                <div>
+                  <Link to={`/product/${item.id}`}>
+                    <li key={item.id}>
+                      <img src={item.imageUrl} alt={item.title}></img>{" "}
+                      {item.title} kr {item.discountedPrice}
+                    </li>
+                  </Link>
+                </div>
+              </container>
             </StyledResults>
           ))}
-    
-        </ul> 
-         
+        </ul>
       ) : (
-        
-        <div>No results found</div>
-        
+        searchTerm.length >= 2 && <StyledNoResults>No results found</StyledNoResults>
       )}
     </div>
-     
   );
+  
 }
    
 export default AutocompleteSearchBar;

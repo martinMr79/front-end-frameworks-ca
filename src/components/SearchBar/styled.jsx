@@ -9,9 +9,7 @@ input {
     border-radius: 1rem;
     width: 300px;
     
-}
-
-`
+}`
 
 export const StyledResults = styled.div `
 
@@ -38,9 +36,7 @@ div {
     text-decoration: none; 
     display: inline-block;
     list-style-type: none;
-    list-item-style: none; 
-    
-}
+};
     
 
   li {  
@@ -60,13 +56,13 @@ a {
     color: black;
     text-decoration: none; 
     list-style-type: none;
-    
-
 }
-
 
 `
 
+export const StyledNoResults = styled.div `
+    color: white; 
+`
 
     
 

@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledInput = styled.div
-
-`
-
-
+export const StyledInput = styled.div`
 input {
     width: 95%; 
     margin-top: 55px; 
@@ -42,7 +38,7 @@ div {
     text-decoration: none; 
     display: inline-block;
     list-style-type: none;
-    list-item-style:none; 
+    list-item-style: none; 
     
 }
     
